@@ -1,0 +1,20 @@
+.path {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	max-height: 280px;
+	width: 100vw;
+	animation: fade-in-bottom 1.25s cubic-bezier(0.39, 0.575, 0.565, 1) 2.5s both;
+	background-color: transparent;
+}
+
+@keyframes fade-in-bottom {
+	0% {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,0 +1,67 @@
+nav {
+	position: fixed;
+	bottom: 0px;
+	width: 90vw;
+	margin: 1rem;
+}
+
+#ul-navbar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	font-family: "variableFontThing";
+	margin: 0 auto;
+}
+
+#ul-navbar li {
+	color: var(--third-bg-color);
+	list-style: none;
+	font-size: 1.5rem;
+	flex-grow: 1;
+	text-align: center;
+}
+
+#ul-navbar :nth-last-child(2) {
+	border-right: none;
+}
+
+#ul-navbar :nth-child(even) {
+	font-family: "variableFont-italic";
+	transform: skewX(-15deg);
+	font-size: 2.2rem;
+	flex-grow: 1;
+}
+
+#ul-navbar > :nth-last-child(1) {
+	text-align: center;
+	border: none;
+	transform: none;
+}
+
+#ul-navbar button svg {
+	color: var(--third-bg-color);
+	background-color: transparent;
+	font-size: 3rem;
+	vertical-align: middle;
+}
+
+#ul-navbar :nth-child(odd):hover {
+	cursor: pointer;
+}
+
+/* .fade-in-bottom {
+	animation: fade-in-bottom 1.25s cubic-bezier(0.39, 0.575, 0.565, 1) 2.5s both;
+} */
+.fade-in {
+	animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) 3.25s both;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
