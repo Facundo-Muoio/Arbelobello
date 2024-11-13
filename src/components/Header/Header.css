@@ -1,8 +1,152 @@
+.background {
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: var(--third-bg-color);
+}
+
+header h1 {
+	font-family: "ciabatta";
+	font-size: 5rem;
+}
+
+header h2 {
+	font-family: "variableFont";
+}
+
+header h1,
+header h2 {
+	color: var(--main-bg-color);
+	background-color: transparent;
+}
+
+header {
+	position: absolute;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: none;
+}
+.tracking-in-expand {
+	will-change: transform, opacity;
+	animation: tracking-in-expand 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s
+		both;
+}
+
+.tracking-in-contract {
+	will-change: transform, opacity;
+	animation: tracking-in-contract 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s
+		both;
+}
+
+@keyframes tracking-in-expand {
+	0% {
+		letter-spacing: -0.5em;
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes tracking-in-contract {
+	0% {
+		letter-spacing: 1em;
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		letter-spacing: normal;
+		opacity: 1;
+	}
+}
+
+#container-logo_sierraBaja {
+	position: relative;
+	max-width: 400px;
+	overflow: hidden;
+}
+
+.logo {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#container-logo_sierraAlta {
+	overflow: hidden;
+	max-width: 135px;
+	position: relative;
+	left: 75px;
+	top: 14px;
+	z-index: 1;
+}
+
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--third-bg-color);
+}
+
+#container-logo_sierraAlta,
+#container-logo_sierraBaja,
+.logo {
+	background-color: transparent;
+}
+
+.mask-logo_sierraAlta {
+	animation: slide_left 5s ease 1s forwards;
+}
+
+.mask-logo_sierraBaja {
+	animation: slide_right 2s ease 1s forwards;
+}
+
+@keyframes slide_right {
+	to {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes slide_left {
+	to {
+		transform: translateX(-250%) scale(0.99);
+	}
+}
+
+.container-videos {
+	width: 100vw;
+	height: 100vh;
+	background-color: transparent;
+	display: flex;
+	flex-direction: row;
+}
+
+.left-video,
+.right-video {
+	width: 100%;
+	height: 100%;
+}
+
 .path {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	max-height: 280px;
+	max-height: 25vh;
 	width: 100vw;
 	animation: fade-in-bottom 1.25s cubic-bezier(0.39, 0.575, 0.565, 1) 2.5s both;
 	background-color: transparent;

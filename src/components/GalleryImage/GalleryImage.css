@@ -1,0 +1,77 @@
+.contenedor-gallery-image {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: end;
+	margin: 0 auto;
+}
+
+.box-bg-gallery {
+	width: 92%;
+	height: 330px;
+	background-color: var(--opinions-bg-color);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 2.5rem;
+	position: relative;
+	border-radius: 5px;
+	opacity: 0;
+	animation: fadeIn 1s 1s linear forwards;
+}
+
+.thumbnail {
+	width: 13.5%;
+	height: 300px;
+	background-color: red;
+	filter: grayscale(100%);
+	object-fit: cover;
+	opacity: 0;
+	transform: translateY(20px); /* Empieza desde abajo */
+	transition: transform 0.5s ease, filter 0.5s ease; /* Transición para hover */
+	animation: fadeInBtm 0.5s ease-out 1s forwards; /* Animación de fade in */
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.thumbnail:hover {
+	filter: grayscale(0%); /* Se quita el filtro de escala de grises */
+	transform: scale(1.05); /* Escalado al hacer hover */
+}
+
+.main-img {
+	height: calc(300px * 3);
+	width: 38%;
+	position: absolute;
+	bottom: 4%;
+	right: 1.5%;
+	object-fit: cover;
+	border-radius: 10px;
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeInBtm 0.5s linear 2.1s forwards;
+}
+
+.thumbnail:nth-child(1) {
+	margin-left: 1.5rem;
+	animation-delay: 1.05s;
+}
+
+.thumbnail:nth-child(2) {
+	animation-delay: 1.25s;
+}
+
+.thumbnail:nth-child(3) {
+	animation-delay: 1.5s;
+}
+
+.thumbnail:nth-child(4) {
+	animation-delay: 1.75s;
+}
+
+.fade {
+	animation: fadeIn 0.35s linear forwards;
+}

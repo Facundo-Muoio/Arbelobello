@@ -41,119 +41,45 @@
 	font-style: italic;
 }
 
-header h1 {
-	font-family: "ciabatta";
-	font-size: 5rem;
-}
-
-header h2 {
-	font-family: "variableFont";
-}
-
-header h1,
-header h2 {
-	background-color: var(--third-bg-color);
-}
-
-header {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: var(--main-bg-color);
-	background-color: var(--third-bg-color);
-}
-
 .italic {
 	font-family: "variableFont-italic";
 	font-size: 16px;
 }
 
-.tracking-in-expand {
-	animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s both;
+html body {
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
 }
 
-.tracking-in-contract {
-	animation: tracking-in-contract 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s
-		both;
-}
-
-@keyframes tracking-in-expand {
-	0% {
-		letter-spacing: -0.5em;
+@keyframes fadeIn {
+	from {
 		opacity: 0;
+		transform: translateY(0px);
 	}
-	40% {
-		opacity: 0.6;
-	}
-	100% {
+	to {
 		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
-@keyframes tracking-in-contract {
-	0% {
-		letter-spacing: 1em;
+@keyframes fadeInRght {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeInBtm {
+	from {
 		opacity: 0;
+		transform: translateY(20px); /* Empieza desde abajo */
 	}
-	40% {
-		opacity: 0.6;
-	}
-	100% {
-		letter-spacing: normal;
+	to {
 		opacity: 1;
+		transform: translateY(0); /* Termina en la posición original */
 	}
 }
-
-#container-logo_sierraBaja {
-	position: relative;
-	max-width: 400px;
-	overflow: hidden;
-}
-
-.logo {
-	display: block;
-	background-color: var(--third-bg-color);
-	width: 100%;
-	height: auto;
-}
-
-#container-logo_sierraAlta {
-	overflow: hidden;
-	max-width: 135px;
-	position: relative;
-	left: 75px;
-	top: 14px;
-	z-index: 1;
-}
-
-.mask {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--third-bg-color);
-}
-
-.mask-logo_sierraAlta {
-	animation: slide_left 5s ease 1.5s forwards;
-}
-
-.mask-logo_sierraBaja {
-	animation: slide_right 2s ease 1.5s forwards;
-}
-
-@keyframes slide_right {
-	to {
-		transform: translateX(100%);
-	}
-}
-
-@keyframes slide_left {
-	to {
-		transform: translateX(-250%) scale(0.99);
-	}
+.thumbnail.active {
+	filter: grayscale(0%);
 }

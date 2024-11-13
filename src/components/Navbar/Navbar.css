@@ -1,6 +1,6 @@
 nav {
-	position: fixed;
-	bottom: 0px;
+	position: absolute;
+	bottom: 1rem;
 	width: 90vw;
 	margin: 1rem;
 }
@@ -50,9 +50,6 @@ nav {
 	cursor: pointer;
 }
 
-/* .fade-in-bottom {
-	animation: fade-in-bottom 1.25s cubic-bezier(0.39, 0.575, 0.565, 1) 2.5s both;
-} */
 .fade-in {
 	animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) 3.25s both;
 }

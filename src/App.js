@@ -1,16 +1,17 @@
 import "./App.css";
 import Header from "./components/Header/Header.js";
+import Introduccion from "./components/Introduccion/Introduccion.js";
 
 export default function App() {
 	return (
 		<>
 			<Header />
 			<main>
-				<section id="introducción"></section>
-				<section id="comodidades"></section>
+				<Introduccion></Introduccion>
+				{/* <section id="comodidades"></section>
 				<section id="ubicación"></section>
 				<section id="testimonios"></section>
-				<section id="tarifas"></section>
+				<section id="tarifas"></section> */}
 			</main>
 			<footer></footer>
 		</>
