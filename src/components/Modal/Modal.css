@@ -1,0 +1,27 @@
+.modal-dialog {
+	width: 40vw;
+	height: 100vh;
+	margin: auto auto;
+	border: none;
+	overflow-y: hidden;
+}
+
+.modal-dialog img {
+	max-width: 100%;
+	max-height: 100%;
+	width: 100%;
+	height: 100%;
+	/* min-width: 100%;
+	min-height: 100%;
+	object-fit: cover; */
+	border: none;
+	outline: none;
+}
+
+.modal-dialog::backdrop {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}

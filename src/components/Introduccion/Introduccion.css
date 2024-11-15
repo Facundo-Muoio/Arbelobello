@@ -49,7 +49,7 @@ section {
 	transform: translatex(-50px);
 	filter: blur(20);
 	opacity: 0;
-	animation: showContent 0.35s 1s linear forwards;
+	animation: showContent 0.35s linear forwards;
 }
 
 @keyframes showContent {
@@ -61,13 +61,13 @@ section {
 }
 
 .contenedor-intro h3 {
-	animation-delay: 1.2s;
+	animation-delay: 0.2s;
 }
 
 .contenedor-intro h1 {
-	animation-delay: 1.4s;
+	animation-delay: 0.4s;
 }
 
 .contenedor-intro h2 {
-	animation-delay: 1.6s;
+	animation-delay: 0.6s;
 }

@@ -1,3 +1,9 @@
+.background-loading {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--third-bg-color);
+}
+
 .background {
 	width: 100vw;
 	height: 100vh;
@@ -32,6 +38,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	background: none;
+	overflow: hidden;
 }
 .tracking-in-expand {
 	will-change: transform, opacity;

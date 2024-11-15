@@ -1,0 +1,47 @@
+.carousel-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	bottom: 0;
+}
+
+.carousel-container img {
+	width: 100%;
+	min-width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.container-btn-carousel {
+	background-color: var(--opinions-bg-color);
+	width: 300px;
+	height: 50px;
+	position: absolute;
+	right: 2.5%;
+	bottom: 5%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	outline: none;
+	border: none;
+	font-size: 1.25rem;
+	color: var(--main-bg-color);
+	font-family: "variableFontThing";
+	letter-spacing: 2px;
+	padding: 1.5rem;
+}
+
+.arrow-left,
+.arrow-right {
+	background-color: transparent;
+	font-size: 2.5rem;
+	cursor: pointer;
+	color: var(--third-bg-color);
+}
+
+.desactive {
+	color: var(--main-bg-color);
+	cursor: default;
+}

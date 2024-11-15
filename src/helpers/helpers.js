@@ -8,4 +8,22 @@ const fetcher = async url => {
 	return json;
 };
 
-export { fetcher };
+const createObserver = (
+	setFunction,
+	{ root = null, marginRoot = "0px 0px 0px 0px", threshold = 0 }
+) => {
+	const observer = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					console.log("es visible");
+					setFunction(true);
+				}
+			});
+		},
+		{ root, marginRoot, threshold }
+	);
+	return observer;
+};
+
+export { fetcher, createObserver };

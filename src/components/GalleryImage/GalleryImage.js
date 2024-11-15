@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./GalleryImage.css";
 import { useFetch } from "../../hooks/hooks";
+import Modal from "../Modal/Modal";
+import { RxArrowRight } from "react-icons/rx";
 
 export default function GalleryImage() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/GALERIA?key=${process.env.API_KEY}`;
@@ -8,6 +10,7 @@ export default function GalleryImage() {
 	const [mainImage, setMainImage] = useState();
 	const [animate, setAnimate] = useState(false);
 	const [timeoutId, setTimeoutId] = useState(null);
+	const [isOpen, setIsOpen] = useState(false);
 	let images;
 
 	const handleImageClick = image => {
@@ -21,6 +24,14 @@ export default function GalleryImage() {
 		setTimeoutId(newTimeoutId);
 	};
 
+	const handleModalOpen = () => {
+		setIsOpen(true);
+	};
+
+	const handleModalClose = () => {
+		setIsOpen(false);
+	};
+
 	useEffect(() => {
 		return () => {
 			if (timeoutId) clearTimeout(timeoutId);
@@ -31,7 +42,7 @@ export default function GalleryImage() {
 		images = data.values.slice(2);
 	}
 
-	if (data)
+	if (data) {
 		return (
 			<div className="contenedor-gallery-image">
 				<div className="box-bg-gallery">
@@ -40,16 +51,32 @@ export default function GalleryImage() {
 							key={index}
 							src={url}
 							alt={alt}
-							className={`thumbnail ${url === mainImage ? "active" : ""}`}
+							loading="lazy"
+							className={`thumbnail ${index} ${
+								!mainImage && index == "1"
+									? "active"
+									: url === mainImage
+									? "active"
+									: ""
+							}`}
 							onClick={() => handleImageClick(url)}
 						/>
 					))}
 					<img
 						src={mainImage ? mainImage : images[0][2]}
 						alt=""
-						className={`main-img ${animate ? "fade" : ""}`}
+						loading="lazy"
+						className={`main-img  ${animate ? "fade" : ""}`}
 					/>
+					<button className="btn-open-modal" onClick={handleModalOpen}>
+						AMPLIAR
+						<RxArrowRight className="arrow-icon" />
+					</button>
 				</div>
+				<Modal isOpen={isOpen} onClose={handleModalClose}>
+					<img src={mainImage ? mainImage : images[0][2]} alt="" />
+				</Modal>
 			</div>
 		);
+	}
 }

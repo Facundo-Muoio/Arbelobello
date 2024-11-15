@@ -10,7 +10,16 @@ import "./Header.css";
 export default function Header() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/HEADER?key=${process.env.API_KEY}`;
 
-	const { data, error } = useFetch(url);
+	const { data, error, isLoading } = useFetch(url);
+
+	if (error) {
+		console.error(error);
+		return error;
+	}
+
+	if (isLoading) {
+		return <div className="background-loading "></div>;
+	}
 
 	if (data)
 		return (
@@ -25,6 +34,7 @@ export default function Header() {
 							className="logo sierra_alta"
 							src={LogoSierraAlta}
 							alt="logo Arbelo Bello"
+							loading="lazy"
 						/>
 						<div className="mask mask-logo_sierraAlta"></div>
 					</div>
@@ -33,6 +43,7 @@ export default function Header() {
 							className="logo sierra_baja"
 							src={LogoSierraBaja}
 							alt="logo Arbelo Bello"
+							loading="lazy"
 						/>
 						<div className="mask mask-logo_sierraBaja"></div>
 					</div>
