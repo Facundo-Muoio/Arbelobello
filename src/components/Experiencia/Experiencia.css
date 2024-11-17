@@ -1,0 +1,125 @@
+.container-experience {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: var(--main-bg-color);
+	align-items: center;
+}
+
+.experiencie-images-container {
+	width: 75%;
+	height: 75%;
+	background-color: var(--opinions-bg-color);
+	position: relative;
+	opacity: 0;
+	transform: translateX(-50px);
+	animation: fadeInLeft 0.5s ease-out 0.75s forwards;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.small-image {
+	width: 32.5% !important;
+	height: 45% !important;
+	position: absolute;
+	left: 5%;
+	top: 15%;
+	z-index: 2;
+}
+
+.medium-image {
+	width: 32.5%;
+	height: 45%;
+	top: 45%;
+	left: 20%;
+	position: absolute;
+	padding: 8px;
+	background-color: transparent;
+	outline: 3px solid var(--fourth-bg-color);
+	z-index: 3;
+}
+
+.large-image {
+	width: 60%;
+	height: 90%;
+	position: absolute;
+	align-self: center;
+	right: 5%;
+	top: 5%;
+}
+
+.experience-text-container {
+	width: 75%;
+	height: 75%;
+}
+
+.text-box {
+	width: 100%;
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.experience-text-container h1 {
+	font-family: "ciabatta";
+	font-size: 4rem;
+	color: var(--secondary-bg-color);
+}
+
+.experience-text-container p {
+	font-family: "variableFont";
+	font-size: 2rem;
+	color: var(--third-bg-color);
+	word-spacing: 0.5rem;
+}
+
+.experience-text-container h1,
+.experience-text-container p {
+	transform: translatex(50px);
+	filter: blur(20);
+	opacity: 0;
+	animation: showContent 0.35s linear forwards;
+}
+
+.experience-text-container p {
+	animation-delay: 0.2s;
+}
+
+.button-box {
+	width: 100%;
+	height: 40%;
+	display: flex;
+	align-items: center;
+}
+
+.btn-experience {
+	display: inline-block;
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
+	color: var(--third-bg-color);
+	background-color: #fff;
+	border: 1px solid var(--third-bg-color);
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: all 0.35s ease;
+	width: 350px;
+	height: 60px;
+	background-color: transparent;
+	font-size: 1.5rem;
+	cursor: pointer;
+	opacity: 0;
+	animation: fadeIn 0.35s linear 0.5s forwards;
+}
+
+.btn-experience:hover {
+	background-color: var(--third-bg-color);
+	color: var(--main-bg-color);
+}

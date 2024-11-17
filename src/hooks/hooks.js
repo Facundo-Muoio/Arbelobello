@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { createObserver, fetcher } from "../helpers/helpers";
+import { fetcher } from "../helpers/helpers";
 import { useEffect } from "react";
 
 const useFetch = url => {
@@ -12,23 +12,18 @@ const useFetch = url => {
 	};
 };
 
-const useAnimation = (
-	setFunction,
-	optionsObserver,
-	elementRef,
-	dependencies = null
-) => {
-	const observer = createObserver(setFunction, optionsObserver);
-
-	console.log(observer, elementRef.current, setFunction);
-
+const useAnimation = (observer, elementRef) => {
 	useEffect(() => {
 		if (elementRef.current) {
 			observer.observe(elementRef.current);
 		}
 
-		return () => observer.unobserve(elementRef.current);
-	}, [dependencies]);
+		return () => {
+			if (elementRef.current) {
+				elementRef.current.unobserve(elementRef.current);
+			}
+		};
+	}, []);
 };
 
 export { useFetch, useAnimation };

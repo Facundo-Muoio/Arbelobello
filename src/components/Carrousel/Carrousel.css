@@ -12,6 +12,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	animation: fadeIn 0.5s ease-out forwards;
 }
 
 .container-text h2,
@@ -22,4 +23,16 @@ b {
 	font-size: 2rem;
 	color: var(--main-bg-color);
 	text-align: center;
+	opacity: 0;
+	filter: blur(20);
+	transform: translateX(-50px);
+	animation: showHeaderText 0.5s ease-out forwards;
+}
+
+@keyframes showHeaderText {
+	to {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateX(0);
+	}
 }

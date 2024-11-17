@@ -1,7 +1,10 @@
 import "./App.css";
 import Carrousel from "./components/Carrousel/Carrousel.js";
+import Experiencia from "./components/Experiencia/Experiencia.js";
 import Header from "./components/Header/Header.js";
 import Introduccion from "./components/Introduccion/Introduccion.js";
+import Experiencia from "./components/Experiencia/Experiencia.js";
+import Comodidades from "./components/Comodidades/Comodidades.js";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -21,8 +24,10 @@ export default function App() {
 			{isLoaded ? (
 				<>
 					<main>
-						<Introduccion></Introduccion>
-						<Carrousel></Carrousel>
+						<Introduccion />
+						<Carrousel />
+						<Experiencia />
+						<Comodidades />
 						{/* <section id="comodidades"></section>
 				<section id="ubicación"></section>
 				<section id="testimonios"></section>

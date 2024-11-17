@@ -16,7 +16,7 @@ const createObserver = (
 		entries => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
-					console.log("es visible");
+					console.log("es visible", entry);
 					setFunction(true);
 				}
 			});

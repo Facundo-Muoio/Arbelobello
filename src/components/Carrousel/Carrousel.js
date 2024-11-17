@@ -11,7 +11,7 @@ export default function Carrousel() {
 	const { data, error } = useFetch(url);
 
 	useEffect(() => {
-		const textObserver = createObserver(setIsVisible, { threshold: 0.9 });
+		const textObserver = createObserver(setIsVisible, { threshold: 0.4 });
 
 		if (textRef.current) {
 			textObserver.observe(textRef.current);

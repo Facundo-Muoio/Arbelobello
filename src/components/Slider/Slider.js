@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import "./Slider.css";
 import { createObserver } from "../../helpers/helpers";
 import {
@@ -8,28 +8,24 @@ import {
 
 export default function Slider({ data }) {
 	const images = data.slice(2);
+	const sliderRef = useRef(null);
 	const [isVisible, setIsVisible] = useState(false);
 	const [counter, setCounter] = useState(1);
-	const sliderRef = useRef(null);
 
 	const handlerNextClick = () => {
 		if (counter < images.length) {
-			slider = sliderRef.current;
-			slider.append(slider.firstChild);
 			setCounter(counter + 1);
 		}
 	};
 
 	const handlerPrevClick = () => {
 		if (counter > 1) {
-			slider = sliderRef.current;
-			slider.prepend(slider.lastChild);
 			setCounter(counter - 1);
 		}
 	};
 
 	useEffect(() => {
-		const sliderObserver = createObserver(setIsVisible, { threshold: 0.5 });
+		const sliderObserver = createObserver(setIsVisible, { threshold: 0.9 });
 
 		if (sliderRef.current) {
 			sliderObserver.observe(sliderRef.current);
@@ -43,16 +39,24 @@ export default function Slider({ data }) {
 	}, []);
 
 	return (
-		<div className="carousel-container">
-			<div className="slider" ref={sliderRef}>
+		<div className="carousel-container" ref={sliderRef}>
+			<div className="slider">
 				{isVisible &&
 					images.map(([id, , url, description]) => (
-						<img key={id} src={url} alt={description} />
+						<img
+							key={id}
+							src={url}
+							alt={description}
+							loading="lazy"
+							style={{
+								translate: `${-100 * (counter - 1)}%`,
+							}}
+						/>
 					))}
 			</div>
 			<div className="container-btn-carousel">
 				{counter < 10 ? "0" + counter : counter} /{" "}
-				{images.length < 10 ? "0" + images.length : ""}
+				{images.length < 10 ? "0" + images.length : images.length}
 				<HiOutlineArrowSmallLeft
 					className={`arrow-left ${counter === 1 ? "desactive" : ""}`}
 					onClick={handlerPrevClick}
