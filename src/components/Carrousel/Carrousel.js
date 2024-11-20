@@ -15,7 +15,6 @@ export default function Carrousel() {
 
 		if (textRef.current) {
 			textObserver.observe(textRef.current);
-			console.log({ ["text es visible"]: isVisible });
 		}
 
 		return () => {

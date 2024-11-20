@@ -5,6 +5,13 @@ import { createObserver } from "../../helpers/helpers.js";
 
 export default function Introduccion() {
 	const sectionRef = useRef(null);
+	useEffect(() => {
+		console.log("GalleryImage mounted");
+		return () => {
+			console.log("GalleryImage unmounted");
+		};
+	}, []);
+
 	const [textVisibility, setTextVisibility] = useState(false);
 	const [galleryVisibility, setGalleryVisibility] = useState(false);
 
@@ -21,6 +28,7 @@ export default function Introduccion() {
 
 		return () => {
 			if (sectionRef.current) {
+				console.log("La seccion ya no es visible");
 				observerText.unobserve(sectionRef.current);
 				observerGallery.unobserve(sectionRef.current);
 			}

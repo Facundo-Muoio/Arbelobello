@@ -11,6 +11,14 @@
 	--third-bg-color: #30211d;
 	--opinions-bg-color: #a7947e;
 	--fourth-bg-color: #3d1808;
+
+	--font-size-sm: clamp(0.8rem, 0.05vi + 0.79rem, 0.84rem);
+	--font-size-base: clamp(1rem, 0.13vi + 0.97rem, 1.13rem);
+	--font-size-md: clamp(1.25rem, 0.26vi + 1.18rem, 1.5rem);
+	--font-size-lg: clamp(1.56rem, 0.46vi + 1.45rem, 2rem);
+	--font-size-xl: clamp(1.95rem, 0.75vi + 1.77rem, 2.66rem);
+	--font-size-xxl: clamp(2.44rem, 1.17vi + 2.15rem, 3.55rem);
+	--font-size-xxxl: clamp(3.05rem, 1.77vi + 2.61rem, 4.73rem);
 }
 
 @font-face {
@@ -53,9 +61,6 @@ html body {
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
 	to {
 		opacity: 1;
 	}
@@ -76,15 +81,8 @@ html body {
 }
 
 @keyframes fadeInBtm {
-	from {
-		opacity: 0;
-		transform: translateY(20px); /* Empieza desde abajo */
-	}
 	to {
 		opacity: 1;
 		transform: translateY(0); /* Termina en la posición original */
 	}
-}
-.thumbnail.active {
-	filter: grayscale(0%);
 }

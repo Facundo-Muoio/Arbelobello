@@ -26,7 +26,6 @@
 .thumbnail {
 	width: 13.5%;
 	height: 300px;
-	background-color: red;
 	filter: grayscale(100%);
 	object-fit: cover;
 	opacity: 0;
@@ -43,7 +42,7 @@
 }
 
 .main-img {
-	height: calc(300px * 3);
+	height: 900px;
 	width: 38%;
 	position: absolute;
 	bottom: 4%;
@@ -105,4 +104,8 @@
 .arrow-icon {
 	font-size: 3rem;
 	background-color: var(--third-bg-color);
+}
+
+.thumbnail.active {
+	filter: grayscale(0%);
 }

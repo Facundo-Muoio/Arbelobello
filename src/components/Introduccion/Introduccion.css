@@ -43,6 +43,10 @@ section {
 	align-items: start;
 }
 
+.contenedor-intro b {
+	color: var(--third-bg-color);
+}
+
 .contenedor-intro h3,
 .contenedor-intro h2,
 .contenedor-intro h1 {

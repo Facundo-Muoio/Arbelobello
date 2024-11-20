@@ -3,7 +3,11 @@ import { fetcher } from "../helpers/helpers";
 import { useEffect } from "react";
 
 const useFetch = url => {
-	const { data, error, isLoading } = useSWR(url, fetcher);
+	const { data, error, isLoading } = useSWR(url, fetcher, {
+		revalidateIfStale: false,
+		revalidateOnFocus: false,
+		revalidateOnReconnect: false,
+	});
 
 	return {
 		data,

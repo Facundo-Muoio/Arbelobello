@@ -46,12 +46,12 @@ export default function GalleryImage() {
 		return (
 			<div className="contenedor-gallery-image">
 				<div className="box-bg-gallery">
-					{images.map(([index, , url, alt]) => (
+					{data.values.slice(2).map(([index, , url, alt]) => (
 						<img
 							key={index}
 							src={url}
 							alt={alt}
-							loading="lazy"
+							loading="eager"
 							className={`thumbnail ${index} ${
 								!mainImage && index == "1"
 									? "active"
@@ -64,8 +64,7 @@ export default function GalleryImage() {
 					))}
 					<img
 						src={mainImage ? mainImage : images[0][2]}
-						alt=""
-						loading="lazy"
+						loading="eager"
 						className={`main-img  ${animate ? "fade" : ""}`}
 					/>
 					<button className="btn-open-modal" onClick={handleModalOpen}>

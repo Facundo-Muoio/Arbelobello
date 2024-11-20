@@ -15,7 +15,9 @@ export default function App() {
 			setIsLoaded(true);
 		}, 5000);
 
-		return () => clearTimeout(timerLoadAnimationHeader);
+		return () => {
+			clearTimeout(timerLoadAnimationHeader);
+		};
 	}, []);
 
 	return (
@@ -24,9 +26,9 @@ export default function App() {
 			{isLoaded ? (
 				<>
 					<main>
-						<Introduccion />
+						{/* <Introduccion />
 						<Carrousel />
-						<Experiencia />
+						<Experiencia /> */}
 						<Comodidades />
 						{/* <section id="comodidades"></section>
 				<section id="ubicación"></section>
