@@ -1,0 +1,157 @@
+.container-footer {
+	background-color: var(--secondary-bg-color);
+	width: 100vw;
+	overflow: hidden;
+	height: 33vh;
+	display: flex;
+	padding: 4rem;
+	justify-content: space-between;
+	color: var(--main-bg-color);
+}
+
+.wraper-social-medias {
+	background-color: transparent;
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+}
+
+.icon {
+	font-size: 5rem;
+	margin-right: 1.5rem;
+	background-color: transparent;
+	color: var(--main-bg-color);
+	cursor: pointer;
+}
+
+.wraper-logo {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+}
+
+.wraper-logo h1,
+.wraper-logo p {
+	background-color: transparent;
+	color: var(--main-bg-color);
+	text-align: center;
+}
+
+.wraper-logo img {
+	background-color: transparent;
+	max-width: 400px;
+}
+
+.wraper-logo h1 {
+	font-family: "ciabatta";
+	font-size: 5rem;
+}
+
+.wraper-logo p {
+	font-family: "variableFont";
+	font-size: 1.5rem;
+}
+.wraper-button {
+	display: flex;
+	align-items: end;
+	background-color: transparent;
+}
+
+.wraper-button button {
+	width: 350px;
+	padding: 1.25rem;
+	font-size: 1.5rem;
+	background-color: transparent;
+	color: var(--main-bg-color);
+	border: 1px solid var(--main-bg-color);
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.wraper-button button:hover {
+	background-color: var(--main-bg-color);
+	color: var(--secondary-bg-color);
+	border: 1px solid var(--secondary-bg-color);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.container-footer {
+		height: 25vh;
+	}
+
+	.container-footer {
+		padding: 2rem;
+	}
+
+	.icon {
+		font-size: 3rem;
+		margin-right: 0.5rem;
+		background-color: transparent;
+	}
+
+	.wraper-logo {
+		justify-content: end;
+	}
+
+	.wraper-logo img {
+		background-color: transparent;
+		max-width: 250px;
+	}
+
+	.wraper-logo h1 {
+		font-family: "ciabatta";
+		font-size: 3rem;
+	}
+
+	.wraper-logo p {
+		font-family: "variableFont";
+		font-size: 1rem;
+	}
+
+	.wraper-button button {
+		width: 220px;
+		padding: 0.75rem;
+		font-size: 1rem;
+	}
+}
+
+@media screen and (min-width: 1025) and (max-width: 1919px) {
+	.container-footer {
+		height: 28vh;
+	}
+
+	.container-footer {
+		padding: 2rem;
+	}
+
+	.icon {
+		font-size: 4.5rem;
+		margin-right: 0.75rem;
+		background-color: transparent;
+	}
+
+	.wraper-logo {
+		justify-content: end;
+	}
+
+	.wraper-logo img {
+		background-color: transparent;
+		max-width: 350px;
+	}
+
+	.wraper-logo h1 {
+		font-family: "ciabatta";
+		font-size: 4.5rem;
+	}
+
+	.wraper-logo p {
+		font-family: "variableFont";
+		font-size: 1.5rem;
+	}
+
+	.wraper-button button {
+		width: 270px;
+		padding: 0.75rem;
+		font-size: 1.25rem;
+	}
+}

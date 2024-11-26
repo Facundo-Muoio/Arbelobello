@@ -40,12 +40,9 @@ export default function Introduccion() {
 			{textVisibility && (
 				<div className="contenedor-intro">
 					<h3>
-						Al pie de las Sierras de <b>Córdoba, en Calamuchita,</b>
-						<br />
-						donde la naturaleza susurra secretos y los grateau
-						<br />
-						llenan de colores el paisaje, encontrarás nuestro <br />
-						rincón de paz:
+						Al pie de las Sierras de <b>Córdoba, en Calamuchita,</b> donde la
+						naturaleza susurra secretos y los grateau llenan de colores el
+						paisaje, encontrarás nuestro rincón de paz:
 					</h3>
 					<h1>Alberobello</h1>
 					<h2>CASA SERRANA</h2>

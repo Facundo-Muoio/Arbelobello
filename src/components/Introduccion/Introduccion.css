@@ -53,6 +53,7 @@ section {
 	transform: translatex(-50px);
 	filter: blur(20);
 	opacity: 0;
+	transition: all linear 0.35s;
 	animation: showContent 0.35s linear forwards;
 }
 
@@ -74,4 +75,91 @@ section {
 
 .contenedor-intro h2 {
 	animation-delay: 0.6s;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.contenedor-intro {
+		padding: 1rem;
+	}
+
+	#introducción {
+		width: 90%;
+	}
+
+	#introducción {
+		height: min-content;
+	}
+
+	.contenedor-intro {
+		width: 100%;
+	}
+
+	#introducción h1 {
+		font-size: 3rem;
+	}
+
+	#introducción h2 {
+		font-size: 1.5rem;
+		letter-spacing: 1.5px;
+	}
+
+	#introducción h3 {
+		font-size: 1.5rem;
+		letter-spacing: 0.8px;
+		margin: 1.5rem 0;
+		margin-bottom: 1rem;
+		width: 100%;
+	}
+
+	#introducción b {
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+	}
+
+	#introducción h3 br {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1025) and (max-width: 1919) {
+	.contenedor-intro {
+		padding: 0px;
+	}
+
+	#introducción h1 {
+		font-size: 4rem;
+	}
+
+	#introducción h2 {
+		font-size: 1.65rem;
+		letter-spacing: 1px;
+	}
+
+	#introducción h3 {
+		font-size: 1.5rem;
+		letter-spacing: 0.8px;
+		margin-bottom: 1rem;
+	}
+
+	#introducción h3 br {
+		display: none;
+	}
+
+	#introducción b {
+		font-size: 1.5rem;
+		letter-spacing: 2px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	#introducción h1 {
+		font-size: 5rem;
+	}
+
+	#introducción h3 {
+		font-size: 2rem;
+	}
+	#introducción b {
+		font-size: 2rem;
+	}
 }

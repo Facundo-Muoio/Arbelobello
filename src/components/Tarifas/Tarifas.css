@@ -1,0 +1,73 @@
+.container-tarifas {
+	width: 100%;
+	height: 40vh;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	padding: 4rem;
+}
+
+.wraper-tarifa h2,
+.wraper-tarifa p {
+	text-align: center;
+	color: var(--third-bg-color);
+	font-family: "variableFontThing";
+	letter-spacing: 2px;
+}
+
+.wraper-tarifa {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+}
+
+.wraper-tarifa:first-child {
+	border-right: 1px solid var(--third-bg-color);
+}
+
+.wraper-tarifa h2 {
+	font-size: 2rem;
+	letter-spacing: 4px;
+	margin-bottom: 2rem;
+	line-height: 3rem;
+}
+
+.wraper-tarifa p {
+	font-size: 1.25rem;
+	font-family: "variableFont";
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.container-tarifas {
+		padding: 2rem;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.wraper-tarifa:first-child {
+		border-right: none;
+		border-bottom: 2px solid var(--third-bg-color);
+		padding: 2rem;
+	}
+
+	.wraper-tarifa:last-child {
+		padding: 2rem;
+	}
+
+	.wraper-tarifa h2 {
+		font-size: 1.5rem;
+	}
+
+	.wraper-tarifa p {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1929px) {
+	.container-tarifas {
+		height: 45vh;
+	}
+}

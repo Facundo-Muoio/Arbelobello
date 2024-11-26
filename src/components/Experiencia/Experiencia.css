@@ -25,8 +25,8 @@
 }
 
 .small-image {
-	width: 32.5% !important;
-	height: 45% !important;
+	width: 32.5%;
+	height: 45%;
 	position: absolute;
 	left: 5%;
 	top: 15%;
@@ -41,7 +41,7 @@
 	position: absolute;
 	padding: 8px;
 	background-color: transparent;
-	outline: 3px solid var(--fourth-bg-color);
+	outline: 2px solid var(--fourth-bg-color);
 	z-index: 3;
 }
 
@@ -122,4 +122,164 @@
 .btn-experience:hover {
 	background-color: var(--third-bg-color);
 	color: var(--main-bg-color);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.container-experience {
+		display: flex;
+		flex-direction: column-reverse;
+		width: 90%;
+		margin: auto;
+		margin-top: 2rem;
+	}
+
+	.text-box h1 br,
+	.text-box p br {
+		display: none;
+	}
+
+	.text-box {
+		gap: 1rem;
+	}
+
+	.experience-text-container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+
+	.experiencie-images-container {
+		width: 100%;
+		height: min-content;
+		min-height: 450px;
+		margin-bottom: 4rem;
+		display: grid;
+		grid-template-areas:
+			"small-image large-image large-image"
+			"medium-image large-image large-image";
+		grid-template-columns: repeat(3, 1fr);
+		padding: 0.8rem;
+		gap: 0.75rem;
+	}
+
+	.experience-text-container h1 {
+		font-size: 2.25rem;
+	}
+
+	.experience-text-container p {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.button-box {
+		height: fit-content;
+	}
+
+	.btn-experience {
+		max-width: 250px;
+		padding: 0.75rem;
+		font-size: 1.25rem;
+		height: fit-content;
+	}
+
+	.small-image,
+	.medium-image,
+	.large-image {
+		object-fit: cover;
+		object-position: center;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.small-image {
+		grid-area: small-image;
+	}
+
+	.medium-image {
+		grid-area: medium-image;
+	}
+
+	.large-image {
+		grid-area: large-image;
+	}
+}
+
+@media screen and (min-width: 1025) and (max-width: 1919px) {
+	.experience-text-container {
+		width: 95%;
+		height: 95%;
+	}
+
+	.experiencie-images-container {
+		height: 80%;
+		width: 90%;
+	}
+
+	.experience-text-container h1 {
+		font-size: 3.75rem;
+	}
+
+	.experience-text-container p {
+		font-size: 2rem;
+	}
+
+	.btn-experience {
+		max-width: 250px;
+		padding: 0.75rem;
+		font-size: 1.25rem;
+	}
+
+	.small-image,
+	.medium-image,
+	.large-image {
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.small-image {
+		width: 200px;
+		height: auto;
+		left: 5%;
+		top: 15%;
+	}
+
+	.medium-image {
+		width: 200px;
+		height: auto;
+		height: 42.5%;
+		left: 20%;
+	}
+
+	.large-image {
+		width: 70%;
+		right: 5%;
+		top: 5%;
+	}
+
+	.btn-experience {
+		min-width: 300px;
+		padding: 1rem;
+		font-size: 1.5rem;
+		letter-spacing: 4px;
+	}
+
+	.experience-text-container h1 br,
+	.experience-text-container p br {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1025) and (max-width: 1279px) {
+	.experience-text-container h1 {
+		font-size: 2.5rem;
+	}
+
+	.experience-text-container p {
+		font-size: 1.5rem;
+	}
 }

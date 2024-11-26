@@ -51,7 +51,7 @@ export default function GalleryImage() {
 							key={index}
 							src={url}
 							alt={alt}
-							loading="eager"
+							decoding="async"
 							className={`thumbnail ${index} ${
 								!mainImage && index == "1"
 									? "active"
@@ -64,7 +64,7 @@ export default function GalleryImage() {
 					))}
 					<img
 						src={mainImage ? mainImage : images[0][2]}
-						loading="eager"
+						decoding="async"
 						className={`main-img  ${animate ? "fade" : ""}`}
 					/>
 					<button className="btn-open-modal" onClick={handleModalOpen}>
