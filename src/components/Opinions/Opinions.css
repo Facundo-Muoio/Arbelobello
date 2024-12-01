@@ -229,6 +229,52 @@
 	}
 }
 
+.container-opinions-text > h1,
+.container-opinions-text > p {
+	opacity: 0;
+	filter: blur(20);
+	animation: fadeInBlur 0.5s linear forwards;
+}
+
+.card-opinion,
+.container-opinions .btn-opinions {
+	opacity: 0;
+	animation: fadeInBlur 0.5s linear forwards;
+}
+
+.container-opinions-text > h1 {
+	transform: translateX(-50);
+}
+
+.container-opinions-text > p,
+.container-opinions .btn-opinions {
+	transform: translateX(50);
+}
+
+.card-opinion {
+	transform: translateY(50);
+}
+
+.container-opinions-text p {
+	animation-delay: 0.2s;
+}
+
+.card-opinion:nth-child(1) {
+	animation-delay: 0.4s;
+}
+
+.card-opinion:nth-child(2) {
+	animation-delay: 0.6s;
+}
+
+.card-opinion:nth-child(3) {
+	animation-delay: 0.8s;
+}
+
+.container-opinions .btn-opinions {
+	animation-delay: 1s;
+}
+
 @media screen and (min-width: 1281px) and (max-width: 1439px) {
 	.container-opinions-text h1 {
 		font-size: 3rem;

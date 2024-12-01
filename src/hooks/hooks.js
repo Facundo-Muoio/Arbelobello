@@ -24,7 +24,7 @@ const useAnimation = (observer, elementRef) => {
 
 		return () => {
 			if (elementRef.current) {
-				elementRef.current.unobserve(elementRef.current);
+				observer.unobserve(elementRef.current);
 			}
 		};
 	}, []);

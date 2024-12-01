@@ -58,6 +58,12 @@ html body {
 	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;
+	overflow-y: scroll;
+	scrollbar-width: thin; /* Opciones: auto, thin o none */
+	scrollbar-color: transparent var(--opinions-bg-color);
+	scroll-snap-type: y mandatory;
+	/* scroll-behavior: smooth; */
+	/* Color del thumb y del track */
 }
 
 @keyframes fadeIn {
@@ -93,4 +99,35 @@ html body {
 		filter: blur(0);
 		transform: translate(0px);
 	}
+}
+
+@keyframes fadeInBlur {
+	to {
+		opacity: 1;
+		filter: blur(0);
+		transform: translate(0px);
+	}
+}
+
+::-webkit-scrollbar {
+	width: 0.6rem; /* Para scroll vertical */
+	height: 0.6rem; /* Para scroll horizontal */
+}
+
+/* Estilo del fondo del scrollbar */
+::-webkit-scrollbar-track {
+	background: transparent; /* Color de fondo */
+	border-radius: 6px; /* Bordes redondeados */
+}
+
+/* Estilo del "thumb" (la barra desplazable) */
+::-webkit-scrollbar-thumb {
+	background: var(--opinions-bg-color); /* Color */
+	border-radius: 6px; /* Bordes redondeados */
+	/* border: 2px solid var(--opinions-bg-color) Espacio entre el thumb y el track */
+}
+
+/* Cambia el color del thumb al hacer hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--third-bg-color); /* Color al pasar el mouse */
 }

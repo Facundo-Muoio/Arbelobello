@@ -6,6 +6,7 @@ export default function SliderCards({ opinions, currentIndex }) {
 		width >= 768 && width <= 1024
 			? 100 / 2 + (300 / width) * 2
 			: 100 / 3 + 0.33;
+
 	return (
 		<div className="container-slider-cards">
 			<div

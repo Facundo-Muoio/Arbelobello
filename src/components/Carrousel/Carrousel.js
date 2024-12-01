@@ -2,12 +2,12 @@ import "./Carrousel.css";
 import Slider from "../Slider/Slider";
 import Slide from "../Slide/Slide";
 import Control from "../Control/Control";
-import { useFetch } from "../../hooks/hooks";
+import { useAnimation, useFetch } from "../../hooks/hooks";
 import {
 	HiOutlineArrowSmallLeft,
 	HiOutlineArrowSmallRight,
 } from "react-icons/hi2";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { createObserver } from "../../helpers/helpers.js";
 
 export default function Carrousel() {
@@ -21,6 +21,7 @@ export default function Carrousel() {
 	const carrouselRef = useRef(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isVisible, setIsVisible] = useState(false);
+	const carrouselObserver = createObserver(setIsVisible, { threshold: 0.9 });
 	let images;
 	let texts;
 
@@ -49,26 +50,7 @@ export default function Carrousel() {
 		}
 	};
 
-	console.log(carrouselRef.current);
-
-	useEffect(() => {
-		const carrouselObserver = createObserver(setIsVisible, { threshold: 0.9 });
-
-		if (carrouselRef.current) {
-			console.log(carrouselRef.current);
-			carrouselObserver.observe(carrouselRef.current);
-		}
-
-		return () => {
-			if (carrouselRef.current)
-				carrouselObserver.unobserve(carrouselRef.current);
-		};
-	}, []);
-
-	// if (data && dataText) {
-	// 	images = data.values.slice(2);
-	// 	texts = dataText.values.filter(text => text[0] === "carousel");
-	// }
+	useAnimation(carrouselObserver, carrouselRef);
 
 	return (
 		<div className="container-carrousel" ref={carrouselRef}>

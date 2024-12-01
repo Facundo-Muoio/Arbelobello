@@ -38,6 +38,43 @@
 	font-family: "variableFont";
 }
 
+.wraper-tarifa:first-child {
+	border-right: none;
+	opacity: 0;
+	animation: fadeInBorder 0.5s linear forwards;
+}
+
+.wraper-tarifa:first-child h2,
+.wraper-tarifa:first-child p {
+	opacity: 0;
+	filter: blur(20);
+	transform: translateX(-50);
+	animation: fadeInBlur 0.5s linear forwards;
+}
+
+.wraper-tarifa:nth-child(2) h2,
+.wraper-tarifa:nth-child(2) p {
+	opacity: 0;
+	filter: blur(20);
+	transform: translateX(50);
+	animation: fadeInBlur 0.5s linear forwards;
+}
+
+.wraper-tarifa:first-child p {
+	animation-delay: 0.4s;
+}
+
+.wraper-tarifa:nth-child(2) p {
+	animation-delay: 0.4s;
+}
+
+@keyframes fadeInBorder {
+	to {
+		opacity: 1;
+		border-right: 1px solid var(--third-bg-color);
+	}
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.container-tarifas {
 		padding: 2rem;

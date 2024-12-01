@@ -98,6 +98,23 @@
 	right: 4rem;
 }
 
+.wraper-social-medias,
+.wraper-logo,
+.wraper-button {
+	opacity: 0;
+	animation: fadeInBlur 0.5s linear 0.5s forwards;
+}
+
+.wraper-social-medias {
+	transform: translateX(-50px);
+	animation-delay: 0.7s;
+}
+
+.wraper-button {
+	transform: translateX(50px);
+	animation-delay: 0.7s;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.container-footer {
 		height: 25svh;

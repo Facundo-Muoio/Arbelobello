@@ -73,6 +73,57 @@
 	width: 60%;
 }
 
+.container-comodidades .row .item p {
+	opacity: 0;
+	filter: blur(20);
+	transform: translateX(100px);
+	animation: fadeInBlur 0.7s linear forwards;
+}
+
+.container-comodidades .row .item:nth-child(2) p {
+	opacity: 0;
+	filter: blur(20);
+	animation: fadeInBlur 0.7s linear forwards;
+}
+
+.container-comodidades .row .item img {
+	opacity: 0;
+	/* filter: blur(20); */
+	animation: fadeInBlur 0.7s linear forwards;
+}
+
+.container-comodidades .row:nth-child(2) .item p {
+	animation-delay: 0.3s;
+}
+
+.container-comodidades .row:nth-child(2) .item img {
+	animation-delay: 0.3s;
+}
+
+.container-comodidades .row:nth-child(3) .item p {
+	animation-delay: 0.6s;
+}
+
+.container-comodidades .row:nth-child(3) .item img {
+	animation-delay: 0.6s;
+}
+
+.container-comodidades .row:nth-child(4) .item p {
+	animation-delay: 0.9s;
+}
+
+.container-comodidades .row:nth-child(4) .item img {
+	animation-delay: 0.9s;
+}
+
+.container-comodidades .row:nth-child(5) .item p {
+	animation-delay: 1.2s;
+}
+
+.container-comodidades .row:nth-child(5) .item img {
+	animation-delay: 1.2s;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.container-comodidades {
 		row-gap: 0;

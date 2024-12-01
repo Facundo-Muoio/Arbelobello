@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./Opinions.css";
 import {
 	HiOutlineArrowSmallLeft,
 	HiOutlineArrowSmallRight,
 } from "react-icons/hi2";
 import SliderCards from "../SliderCards/SlideCards";
+import { useAnimation } from "../../hooks/hooks";
+import { createObserver } from "../../helpers/helpers";
 
 export default function Opinions() {
 	const opinions = [
@@ -90,9 +92,14 @@ export default function Opinions() {
 	const numberCardsVisibles = width >= 768 && width <= 1024 ? 2 : 3;
 	const pages = opinions.length - numberCardsVisibles + 1;
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [isVisible, setIsVisible] = useState();
+	const opinionsRef = useRef();
 
 	const firstIndex = currentIndex === 0;
 	const lastIndex = currentIndex === opinions.length - numberCardsVisibles;
+
+	const opinionsObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	useAnimation(opinionsObserver, opinionsRef);
 
 	const handleNext = () => {
 		if (!lastIndex) {
@@ -107,24 +114,28 @@ export default function Opinions() {
 	};
 
 	return (
-		<div className="container-opinions">
-			<div className="container-opinions-text">
-				<h1>Ya disfrutaron</h1>
-				<p>Alberobello Casa Serrana</p>
-			</div>
-			<SliderCards opinions={opinions} currentIndex={currentIndex} />
-			<button className="btn-opinions">
-				{currentIndex < 10 ? 0 + currentIndex + 1 : currentIndex + 1} /{" "}
-				{pages < 10 ? 0 + pages : pages}
-				<HiOutlineArrowSmallLeft
-					className="arrow-opinion"
-					onClick={handlePrev}
-				/>
-				<HiOutlineArrowSmallRight
-					className="arrow-opinion"
-					onClick={handleNext}
-				/>
-			</button>
+		<div className="container-opinions" ref={opinionsRef}>
+			{isVisible && (
+				<>
+					<div className="container-opinions-text">
+						<h1>Ya disfrutaron</h1>
+						<p>Alberobello Casa Serrana</p>
+					</div>
+					<SliderCards opinions={opinions} currentIndex={currentIndex} />
+					<button className="btn-opinions">
+						{currentIndex < 10 ? 0 + currentIndex + 1 : currentIndex + 1} /{" "}
+						{pages < 10 ? 0 + pages : pages}
+						<HiOutlineArrowSmallLeft
+							className="arrow-opinion"
+							onClick={handlePrev}
+						/>
+						<HiOutlineArrowSmallRight
+							className="arrow-opinion"
+							onClick={handleNext}
+						/>
+					</button>
+				</>
+			)}
 		</div>
 	);
 }
