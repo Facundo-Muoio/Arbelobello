@@ -26,8 +26,10 @@ export default function App() {
 
 	return (
 		<>
+			<Header />
 			<main>
 				<Introduccion />
+				<Carrousel />
 				<Experiencia />
 				<Comodidades />
 				<Ubicacion />

@@ -1,8 +1,6 @@
 import Star from "../Star/Star";
 
 export default function SliderCards({ opinions, currentIndex }) {
-	console.log(opinions);
-	console.log(window.innerWidth);
 	const width = window.innerWidth;
 	const translateMultiplicator =
 		width >= 768 && width <= 1024

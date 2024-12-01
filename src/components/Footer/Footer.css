@@ -2,10 +2,12 @@
 	background-color: var(--secondary-bg-color);
 	width: 100vw;
 	overflow: hidden;
-	height: 33vh;
+	height: 33dvh;
+	min-height: auto;
 	display: flex;
 	padding: 4rem;
-	justify-content: space-between;
+	position: relative;
+	/* justify-content: space-between; */
 	color: var(--main-bg-color);
 }
 
@@ -74,9 +76,32 @@
 	border: 1px solid var(--secondary-bg-color);
 }
 
+.wraper-social-medias {
+	position: absolute;
+	left: 4rem;
+	bottom: 4rem;
+}
+
+.wraper-logo {
+	width: fit-content;
+	height: fit-content;
+	position: absolute;
+	bottom: 4rem;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.wraper-button {
+	position: absolute;
+	bottom: 4rem;
+	right: 4rem;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.container-footer {
-		height: 25vh;
+		height: 25svh;
+		position: relative;
 	}
 
 	.container-footer {
@@ -113,35 +138,98 @@
 		padding: 0.75rem;
 		font-size: 1rem;
 	}
-}
 
-@media screen and (min-width: 1025) and (max-width: 1919px) {
-	.container-footer {
-		height: 28vh;
+	.wraper-social-medias {
+		position: absolute;
+		left: 2rem;
+		bottom: 2rem;
 	}
 
+	.wraper-logo {
+		width: fit-content;
+		height: fit-content;
+		position: absolute;
+		bottom: 2rem;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+
+	.wraper-button {
+		position: absolute;
+		bottom: 2rem;
+		right: 2rem;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
 	.container-footer {
+		height: 30svh;
 		padding: 2rem;
+		position: relative;
 	}
 
 	.icon {
-		font-size: 4.5rem;
+		font-size: 3rem;
 		margin-right: 0.75rem;
 		background-color: transparent;
 	}
 
-	.wraper-logo {
-		justify-content: end;
+	.wraper-logo img {
+		background-color: transparent;
+		width: 250px;
+	}
+
+	.wraper-logo h1 {
+		font-size: 3rem;
+	}
+
+	.wraper-logo p {
+		font-size: 1rem;
+	}
+
+	.wraper-button button {
+		width: 225px;
+		padding: 0.75rem;
+		font-size: 1rem;
+	}
+
+	.wraper-social-medias,
+	.wraper-logo,
+	.wraper-button {
+		bottom: 2rem;
+	}
+
+	.wraper-social-medias {
+		left: 2rem;
+	}
+
+	.wraper-button {
+		right: 2rem;
+	}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
+	.container-footer {
+		min-height: 28svh;
+		height: 28svh;
+		display: block;
+		position: relative;
+	}
+
+	.icon {
+		font-size: 4rem;
+		margin-right: 0.75rem;
+		background-color: transparent;
 	}
 
 	.wraper-logo img {
 		background-color: transparent;
-		max-width: 350px;
+		width: 325px;
 	}
 
 	.wraper-logo h1 {
-		font-family: "ciabatta";
-		font-size: 4.5rem;
+		font-size: 4rem;
 	}
 
 	.wraper-logo p {
@@ -150,8 +238,8 @@
 	}
 
 	.wraper-button button {
-		width: 270px;
+		width: 280px;
 		padding: 0.75rem;
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 }

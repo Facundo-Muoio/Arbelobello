@@ -40,17 +40,20 @@ export default function GalleryImage() {
 
 	if (data) {
 		images = data.values.slice(2);
+		console.log(images);
 	}
 
-	if (data) {
+	if (images) {
+		console.log("montando dom elements");
 		return (
 			<div className="contenedor-gallery-image">
 				<div className="box-bg-gallery">
-					{data.values.slice(2).map(([index, , url, alt]) => (
+					{images.map(([index, , url, alt]) => (
 						<img
 							key={index}
 							src={url}
 							alt={alt}
+							loading="lazy"
 							decoding="async"
 							className={`thumbnail ${index} ${
 								!mainImage && index == "1"
@@ -78,4 +81,37 @@ export default function GalleryImage() {
 			</div>
 		);
 	}
+
+	// return (
+	// 	<div className="contenedor-gallery-image">
+	// 		<div className="box-bg-gallery">
+	// 			{images
+	// 				? images.map(([index, , url, alt]) => {
+	// 						return (
+	// 							<>
+	// 								<img
+	// 									key={index}
+	// 									src={url}
+	// 									alt={alt}
+	// 									className={`thumbnail ${index} `}
+	// 								/>
+	// 								<img
+	// 									key="548"
+	// 									src={mainImage ? mainImage : images[0][2]}
+	// 									className={`main-img`}
+	// 								/>
+	// 							</>
+	// 						);
+	// 				  })
+	// 				: ""}
+	// 			<button className="btn-open-modal" onClick={handleModalOpen}>
+	// 				AMPLIAR
+	// 				<RxArrowRight className="arrow-icon" />
+	// 			</button>
+	// 		</div>
+	// 		{/* <Modal isOpen={isOpen} onClose={handleModalClose}>
+	// 			<img src={mainImage ? mainImage : images[0][2]} alt="" />
+	// 		</Modal> */}
+	// 	</div>
+	// );
 }

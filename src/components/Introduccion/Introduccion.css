@@ -1,6 +1,7 @@
 section {
 	width: 80%;
 	height: 100vh;
+	height: 100dvh;
 	margin: auto;
 }
 
@@ -39,7 +40,7 @@ section {
 	height: 50%;
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	justify-content: center;
 	align-items: start;
 }
 
@@ -83,10 +84,6 @@ section {
 	}
 
 	#introducción {
-		width: 90%;
-	}
-
-	#introducción {
 		height: min-content;
 	}
 
@@ -126,17 +123,11 @@ section {
 		padding: 0px;
 	}
 
-	#introducción h1 {
-		font-size: 4rem;
-	}
-
 	#introducción h2 {
-		font-size: 1.65rem;
 		letter-spacing: 1px;
 	}
 
 	#introducción h3 {
-		font-size: 1.5rem;
 		letter-spacing: 0.8px;
 		margin-bottom: 1rem;
 	}
@@ -146,14 +137,39 @@ section {
 	}
 
 	#introducción b {
-		font-size: 1.5rem;
 		letter-spacing: 2px;
 	}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
 	#introducción h1 {
-		font-size: 5rem;
+		font-size: 4.5rem;
+	}
+
+	#introducción h3 {
+		font-size: 1.75rem;
+	}
+	#introducción b {
+		font-size: 1.75rem;
+	}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
+	#introducción h1 {
+		font-size: 5.5rem;
+	}
+
+	#introducción h3 {
+		font-size: 2rem;
+	}
+	#introducción b {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	#introducción h1 {
+		font-size: 6rem;
 	}
 
 	#introducción h3 {

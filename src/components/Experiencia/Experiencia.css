@@ -10,6 +10,7 @@
 .experiencie-images-container {
 	width: 75%;
 	height: 75%;
+	margin: auto 0;
 	background-color: var(--opinions-bg-color);
 	position: relative;
 	opacity: 0;
@@ -39,7 +40,7 @@
 	top: 45%;
 	left: 20%;
 	position: absolute;
-	padding: 8px;
+	padding: 0.5rem;
 	background-color: transparent;
 	outline: 2px solid var(--fourth-bg-color);
 	z-index: 3;
@@ -102,26 +103,33 @@
 
 .btn-experience {
 	display: inline-block;
-	padding: 0.8rem 2rem;
+	padding: 1.25rem;
 	font-size: 1rem;
 	color: var(--third-bg-color);
 	background-color: #fff;
 	border: 1px solid var(--third-bg-color);
 	cursor: pointer;
 	text-transform: uppercase;
-	transition: all 0.35s ease;
+	transition: 0.5s ease;
 	width: 350px;
-	height: 60px;
+	height: fit-content;
 	background-color: transparent;
 	font-size: 1.5rem;
+	font-family: "variableFontThing";
 	cursor: pointer;
 	opacity: 0;
 	animation: fadeIn 0.35s linear 0.5s forwards;
 }
 
+.btn-experience strong {
+	background-color: transparent;
+	/* animation: fadeIn 0.35s linear 0.5s forwards; */
+}
+
 .btn-experience:hover {
-	background-color: var(--third-bg-color);
 	color: var(--main-bg-color);
+	background-color: var(--secondary-bg-color);
+	border: 1px solid var(--main-bg-color);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -178,10 +186,12 @@
 	}
 
 	.btn-experience {
-		max-width: 250px;
+		letter-spacing: 1.5px;
+		width: 250px;
 		padding: 0.75rem;
 		font-size: 1.25rem;
 		height: fit-content;
+		font-family: "variableFontThing";
 	}
 
 	.small-image,
@@ -209,7 +219,7 @@
 	}
 }
 
-@media screen and (min-width: 1025) and (max-width: 1919px) {
+@media screen and (min-width: 1025px) and (max-width: 1919px) {
 	.experience-text-container {
 		width: 95%;
 		height: 95%;
@@ -228,12 +238,6 @@
 		font-size: 2rem;
 	}
 
-	.btn-experience {
-		max-width: 250px;
-		padding: 0.75rem;
-		font-size: 1.25rem;
-	}
-
 	.small-image,
 	.medium-image,
 	.large-image {
@@ -241,31 +245,12 @@
 		object-position: center;
 	}
 
-	.small-image {
-		width: 200px;
-		height: auto;
-		left: 5%;
-		top: 15%;
-	}
-
-	.medium-image {
-		width: 200px;
-		height: auto;
-		height: 42.5%;
-		left: 20%;
-	}
-
-	.large-image {
-		width: 70%;
-		right: 5%;
-		top: 5%;
-	}
-
 	.btn-experience {
-		min-width: 300px;
+		width: 300px;
 		padding: 1rem;
 		font-size: 1.5rem;
 		letter-spacing: 4px;
+		font-family: "variableFontThing";
 	}
 
 	.experience-text-container h1 br,
@@ -274,12 +259,38 @@
 	}
 }
 
-@media screen and (min-width: 1025) and (max-width: 1279px) {
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
 	.experience-text-container h1 {
 		font-size: 2.5rem;
 	}
 
 	.experience-text-container p {
 		font-size: 1.5rem;
+	}
+
+	.btn-experience {
+		padding: 0.75rem;
+		font-family: "variableFontThing";
+		font-size: 1.25rem;
+		width: 250px;
+		letter-spacing: 1.5px;
+	}
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+	.experience-text-container h1 {
+		font-size: 3rem;
+	}
+
+	.experience-text-container p {
+		font-size: 1.75rem;
+	}
+
+	.btn-experience {
+		letter-spacing: 1.5px;
+		width: 250px;
+		padding: 0.75rem;
+		font-size: 1.25rem;
+		font-family: "variableFontThing";
 	}
 }

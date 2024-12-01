@@ -18,6 +18,7 @@
 	height: 100%;
 	border: none;
 	outline: none;
+	object-fit: cover;
 }
 
 .modal-dialog::backdrop {

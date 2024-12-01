@@ -97,7 +97,7 @@ iframe {
 	}
 }
 
-@media screen and (min-width: 1025) and (max-width: 1279px) {
+@media screen and (min-width: 1025) and (max-width: 1440px) {
 	.container-ubicacion-texts h1 {
 		font-size: 3rem;
 		margin-bottom: 2rem;
@@ -108,7 +108,7 @@ iframe {
 	}
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1919px) {
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
 	.container-ubicacion-texts h1 {
 		font-size: 3.75rem;
 		margin-bottom: 2rem;

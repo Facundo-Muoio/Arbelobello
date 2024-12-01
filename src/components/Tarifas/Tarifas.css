@@ -66,7 +66,17 @@
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1929px) {
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+	.wraper-tarifa h2 {
+		font-size: 1.75rem;
+	}
+
+	.wraper-tarifa p {
+		font-size: 1.25rem;
+	}
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1929px) {
 	.container-tarifas {
 		height: 45vh;
 	}

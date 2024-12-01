@@ -28,7 +28,6 @@ export default function Introduccion() {
 
 		return () => {
 			if (sectionRef.current) {
-				console.log("La seccion ya no es visible");
 				observerText.unobserve(sectionRef.current);
 				observerGallery.unobserve(sectionRef.current);
 			}

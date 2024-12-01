@@ -68,7 +68,9 @@ export default function Experiencia() {
 							</p>
 						</div>
 						<div className="button-box">
-							<button className="btn-experience">VER MÁS</button>
+							<button className="btn-experience">
+								<strong>VER MÁS</strong>
+							</button>
 						</div>
 					</div>
 				</>

@@ -86,3 +86,11 @@ html body {
 		transform: translateY(0); /* Termina en la posición original */
 	}
 }
+
+@keyframes fadeInBlutRght {
+	to {
+		opacity: 1;
+		filter: blur(0);
+		transform: translate(0px);
+	}
+}
