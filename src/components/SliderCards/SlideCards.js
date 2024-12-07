@@ -15,8 +15,8 @@ export default function SliderCards({ opinions, currentIndex }) {
 					transform: `translateX(-${currentIndex * translateMultiplicator}%)`,
 				}}
 			>
-				{opinions.map(({ id, userImage, fullName, opinion, rating }, index) => (
-					<div className="card-opinion" key={id}>
+				{opinions.map(([fullName, userImage, rating, opinion]) => (
+					<div className="card-opinion" key={crypto.randomUUID()}>
 						<div>
 							<strong>“”</strong>
 							<img src={userImage} alt="" />

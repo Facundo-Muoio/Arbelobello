@@ -7,6 +7,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	scroll-snap-align: start;
 }
 
 .wraper-text-carrousel {
@@ -32,8 +33,14 @@
 	animation: fadeInBlutRght 0.5s linear forwards;
 }
 
+.wraper-text-carrousel b {
+	background-color: transparent;
+	font-family: "variableFontBold";
+}
+
 .wraper-slider {
 	max-width: 1200px;
+	width: 100%;
 	max-height: 720px;
 	aspect-ratio: 16 / 9;
 	display: flex;

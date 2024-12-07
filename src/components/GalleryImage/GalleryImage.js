@@ -6,6 +6,7 @@ import { RxArrowRight } from "react-icons/rx";
 
 export default function GalleryImage() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/GALERIA?key=${process.env.API_KEY}`;
+
 	const { data } = useFetch(url);
 	const [mainImage, setMainImage] = useState();
 	const [animate, setAnimate] = useState(false);
@@ -28,10 +29,6 @@ export default function GalleryImage() {
 		setIsOpen(true);
 	};
 
-	const handleModalClose = () => {
-		setIsOpen(false);
-	};
-
 	useEffect(() => {
 		return () => {
 			if (timeoutId) clearTimeout(timeoutId);
@@ -40,11 +37,9 @@ export default function GalleryImage() {
 
 	if (data) {
 		images = data.values.slice(2);
-		console.log(images);
 	}
 
 	if (images) {
-		console.log("montando dom elements");
 		return (
 			<div className="contenedor-gallery-image">
 				<div className="box-bg-gallery">
@@ -75,7 +70,7 @@ export default function GalleryImage() {
 						<RxArrowRight className="arrow-icon" />
 					</button>
 				</div>
-				<Modal isOpen={isOpen} onClose={handleModalClose}>
+				<Modal isOpen={isOpen} setIsOpen={setIsOpen}>
 					<img src={mainImage ? mainImage : images[0][2]} alt="" />
 				</Modal>
 			</div>

@@ -1,0 +1,220 @@
+.modal-form {
+	width: fit-content;
+	height: fit-content;
+	box-shadow: 0 4 12 #000;
+	padding: 0 !important;
+}
+
+.modal-form .modal-content {
+	width: 100%;
+}
+
+.form {
+	width: 400px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	padding: 1em;
+	background-color: var(--third-bg-color);
+	color: var(--main-bg-color);
+	border: none;
+}
+
+.wraper-logo-form {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 0.5em;
+}
+
+.form .logo-form {
+	width: 10rem;
+	background-color: transparent;
+	color: var(--main-bg-color);
+}
+
+.form h2 {
+	font-family: "ciabatta";
+	font-size: 2rem;
+}
+
+.form h3 {
+	background-color: transparent;
+	font-size: 0.8rem;
+	font-family: "variableFont";
+}
+
+.container-input {
+	position: relative;
+	background-color: transparent;
+	width: 80%;
+	height: fit-content;
+}
+
+.form input {
+	width: 100%;
+	padding: 0.5em;
+	font-family: "variableFont";
+	font-size: 1.2em;
+	color: var(--main-bg-color);
+	background-color: var(--third-bg-color);
+	outline: none;
+	border: 1px solid #898989;
+	margin-top: 0.25em;
+}
+
+.form label {
+	color: #898989;
+	background-color: var(--third-bg-color);
+	font-family: "variableFontThing";
+	position: absolute;
+	top: 50%;
+	left: 0.5em;
+	transform: translateY(-50%);
+	text-align: center;
+	pointer-events: none;
+	transition: 0.3s;
+}
+
+.form input:focus,
+form select:focus {
+	border: 1px solid var(--main-bg-color);
+}
+
+.form input:focus ~ label {
+	color: var(--main-bg-color);
+}
+
+.form input:focus ~ label,
+.form input:valid ~ label {
+	top: 0;
+	font-size: 0.85em;
+	background-color: var(--third-bg-color);
+	padding: 0 0.5em;
+}
+
+.form input:not(:placeholder-shown) ~ label {
+	top: 0;
+	font-size: 0.85em;
+	background-color: var(--third-bg-color);
+	padding: 0 0.5em;
+}
+
+.form select {
+	width: 80%;
+	font-size: 1.2em;
+	padding: 0.5em;
+	font-family: "variableFont";
+	color: var(--main-bg-color);
+	background-color: var(--third-bg-color);
+	outline: none;
+	border: 1px solid var(--main-bg-color);
+	margin-top: 0.25em;
+}
+
+.form select option {
+	width: 80%;
+	background-color: var(--third-bg-color);
+	color: var(--main-bg-color);
+}
+
+.form select::after {
+	margin-right: 0.5em;
+}
+
+.form button {
+	font-family: "variableFont";
+	font-size: 1em;
+	padding: 0.5em 1em;
+	outline: none;
+	border: 1px solid var(--main-bg-color);
+	cursor: pointer;
+	margin-top: 1em;
+	background-color: var(--third-bg-color);
+	color: var(--main-bg-color);
+	transition: all 0.5s ease;
+	letter-spacing: 2px;
+}
+
+.form button:hover {
+	background-color: var(--main-bg-color);
+	color: var(--third-bg-color);
+}
+
+.form .input-error {
+	border: 1px solid rgb(255, 64, 64);
+}
+
+.form .input-error ~ label {
+	color: rgb(255, 64, 64);
+}
+
+.form .span-error {
+	font-family: "variableFontThing";
+	background-color: transparent;
+	color: rgb(255, 64, 64);
+	font-size: 0.9em;
+}
+
+.form .react-datepicker-wrapper {
+	width: 100%;
+	position: relative;
+}
+
+.form .react-datepicker-wrapper .custom-input {
+	margin-top: 0;
+}
+
+.form .custom-input::placeholder {
+	color: var(--main-bg-color);
+	font-family: "variableFontThing";
+	font-size: 0.8em;
+}
+
+.form input[type="text"]:read-only {
+	color: #898989;
+	border-color: #898989;
+	cursor: default;
+}
+
+.wraper-input-date,
+.wraper-select-form {
+	width: 80%;
+	position: relative;
+}
+
+.wraper-input-date input,
+.wraper-input-date input:focus {
+	margin-top: 0;
+	color: #898989;
+	border-color: #898989;
+}
+
+.form .label-date,
+.form .label-select-form {
+	top: 0;
+	font-size: 0.85em;
+	background-color: var(--third-bg-color);
+	color: #898989;
+	padding: 0 0.5em;
+}
+
+.wraper-select-form input {
+	margin: 0;
+	width: 100%;
+	border-color: #898989;
+	color: #898989;
+}
+
+.container-spinner {
+	margin-top: 1em;
+	background-color: var(--third-bg-color);
+}
+
+l-line-spinner {
+	background-color: var(--third-bg-color);
+}

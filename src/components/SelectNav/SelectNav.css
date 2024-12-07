@@ -1,0 +1,47 @@
+.container-selectNav {
+	position: relative;
+}
+
+.wraper-selectNav {
+	background-color: transparent;
+	color: var(--third-bg-color);
+}
+
+.container-selectNav ul {
+	color: var(--main-bg-color);
+	background-color: var(--third-bg-color);
+	position: absolute;
+	bottom: 2em;
+	right: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 0.15em;
+	padding: 0.5em;
+	border-radius: 1em 1em 1em 0;
+	opacity: 0;
+	animation: fadeIn 0.2s linear forwards;
+}
+
+.container-selectNav ul li {
+	color: inherit !important;
+	background-color: inherit;
+	cursor: pointer;
+	transition: all 0.2s linear;
+	font-family: "variableFontThing";
+}
+
+.container-selectNav ul li:hover:not(:last-child) {
+	background-color: var(--main-bg-color);
+	color: var(--third-bg-color) !important;
+}
+
+.container-selectNav ul li:last-child {
+	border-bottom: 1px solid var(--main-bg-color);
+	margin-bottom: 0.5em;
+	padding-bottom: 0.25em;
+	font-family: "variableFont" !important;
+	text-transform: capitalize;
+	font-size: 0.75em !important;
+	cursor: none;
+}

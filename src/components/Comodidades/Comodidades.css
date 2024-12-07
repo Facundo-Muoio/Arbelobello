@@ -5,6 +5,7 @@
 	height: auto;
 	background-color: var(--secondary-bg-color);
 	padding: 4%;
+	scroll-snap-type: start;
 }
 
 .container-comodidades > .row,

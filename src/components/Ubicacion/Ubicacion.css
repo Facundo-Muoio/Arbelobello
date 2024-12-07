@@ -4,6 +4,7 @@
 	background-color: var(--main-bg-color);
 	display: grid;
 	grid-template-columns: 45% 55%;
+	scroll-snap-type: start;
 }
 
 .container-ubicacion-texts h1 {

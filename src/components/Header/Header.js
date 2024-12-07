@@ -3,6 +3,7 @@ import LogoSierraBaja from "../../images/sierra_baja.png";
 import PathSierra from "../../images/pathSierras.png";
 import Navbar from "../Navbar/Navbar.js";
 import FadeImage from "../FadeImage/FadeImage.js";
+import ToastProvider from "../Toast/ToastProvider.js";
 import { useFetch } from "../../hooks/hooks.js";
 import "dotenv/config";
 import "./Header.css";
@@ -50,7 +51,9 @@ export default function Header() {
 					<h1 className="tracking-in-expand">Alberobello</h1>
 					<h2 className="tracking-in-contract ">CASA SERRANA</h2>
 					<img className="path" src={PathSierra} alt="" />
-					<Navbar />
+					<ToastProvider>
+						<Navbar />
+					</ToastProvider>
 				</header>
 			</>
 		);

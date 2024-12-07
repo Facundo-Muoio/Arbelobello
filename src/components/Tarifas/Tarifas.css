@@ -5,6 +5,7 @@
 	display: flex;
 	align-items: center;
 	padding: 4rem;
+	scroll-snap-align: start;
 }
 
 .wraper-tarifa h2,

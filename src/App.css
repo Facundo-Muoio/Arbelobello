@@ -36,17 +36,15 @@
 }
 
 @font-face {
-	font-family: "variableFontThing";
-	src: url("./fonts/Archivo-Thin.ttf") format("truetype");
+	font-family: "variableFontBold";
+	src: url("./fonts/Archivo-Bold.ttf") format("truetype");
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "variableFont-italic";
-	src: url("./fonts/Archivo-Italic-VariableFont_wdth,wght.ttf")
-		format("truetype");
-	font-weight: normal;
-	font-style: italic;
+	font-family: "variableFontThing";
+	src: url("./fonts/Archivo-Thin.ttf") format("truetype");
+	font-style: normal;
 }
 
 .italic {
@@ -89,7 +87,7 @@ html body {
 @keyframes fadeInBtm {
 	to {
 		opacity: 1;
-		transform: translateY(0); /* Termina en la posición original */
+		transform: translateY(0px); /* Termina en la posición original */
 	}
 }
 

@@ -3,6 +3,7 @@ section {
 	height: 100vh;
 	height: 100dvh;
 	margin: auto;
+	scroll-snap-align: start;
 }
 
 #introducción {
@@ -22,7 +23,7 @@ section {
 	letter-spacing: 3px;
 }
 
-#introducción h3 {
+#introducción p {
 	color: var(--third-bg-color);
 	font-size: 1.8rem;
 	letter-spacing: 1px;
@@ -46,9 +47,10 @@ section {
 
 .contenedor-intro b {
 	color: var(--third-bg-color);
+	font-family: "variableFontBold";
 }
 
-.contenedor-intro h3,
+.contenedor-intro p,
 .contenedor-intro h2,
 .contenedor-intro h1 {
 	transform: translatex(-50px);
@@ -66,7 +68,7 @@ section {
 	}
 }
 
-.contenedor-intro h3 {
+.contenedor-intro p {
 	animation-delay: 0.2s;
 }
 
@@ -100,7 +102,7 @@ section {
 		letter-spacing: 1.5px;
 	}
 
-	#introducción h3 {
+	#introducción p {
 		font-size: 1.5rem;
 		letter-spacing: 0.8px;
 		margin: 1.5rem 0;
@@ -113,7 +115,7 @@ section {
 		letter-spacing: 2px;
 	}
 
-	#introducción h3 br {
+	#introducción p br {
 		display: none;
 	}
 }
@@ -127,12 +129,12 @@ section {
 		letter-spacing: 1px;
 	}
 
-	#introducción h3 {
+	#introducción p {
 		letter-spacing: 0.8px;
 		margin-bottom: 1rem;
 	}
 
-	#introducción h3 br {
+	#introducción p br {
 		display: none;
 	}
 
@@ -141,12 +143,29 @@ section {
 	}
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1279px) {
+	#introducción h1 {
+		font-size: 4.5rem;
+	}
+
+	#introducción h2 {
+		font-size: 1.75rem;
+	}
+
+	#introducción p {
+		font-size: 1.5rem;
+	}
+	#introducción b {
+		font-size: 1.5rem;
+	}
+}
+
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
 	#introducción h1 {
 		font-size: 4.5rem;
 	}
 
-	#introducción h3 {
+	#introducción p {
 		font-size: 1.75rem;
 	}
 	#introducción b {
@@ -159,7 +178,7 @@ section {
 		font-size: 5.5rem;
 	}
 
-	#introducción h3 {
+	#introducción p {
 		font-size: 2rem;
 	}
 	#introducción b {
@@ -172,7 +191,7 @@ section {
 		font-size: 6rem;
 	}
 
-	#introducción h3 {
+	#introducción p {
 		font-size: 2rem;
 	}
 	#introducción b {

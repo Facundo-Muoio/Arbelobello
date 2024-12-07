@@ -9,6 +9,7 @@
 	position: relative;
 	/* justify-content: space-between; */
 	color: var(--main-bg-color);
+	scroll-snap-align: start;
 }
 
 .wraper-social-medias {

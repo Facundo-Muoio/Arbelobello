@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef } from "react";
 import "./Modal.css";
 
-export default function Modal({ isOpen, onClose, children }) {
+export default function Modal({ isOpen, setIsOpen, children, className }) {
 	const id = useId();
 	const dialogRef = useRef(null);
 
@@ -13,14 +13,17 @@ export default function Modal({ isOpen, onClose, children }) {
 		}
 
 		const handleClickOutside = event => {
-			if (dialogRef.current.classList[0] === event.target.classList[0]) {
-				onClose();
+			if (
+				dialogRef.current &&
+				!dialogRef.current.firstChild.contains(event.target)
+			) {
+				setIsOpen(false);
 			}
 		};
 
 		const handleKeyDown = event => {
 			if (event.key === "Escape") {
-				onClose();
+				setIsOpen(false);
 			}
 		};
 
@@ -29,12 +32,16 @@ export default function Modal({ isOpen, onClose, children }) {
 
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
-			document.addEventListener("keydown", handleKeyDown);
+			document.removeEventListener("keydown", handleKeyDown);
 		};
-	}, [isOpen, onClose]);
+	}, [isOpen]);
 
 	return (
-		<dialog id={id} ref={dialogRef} className="modal-dialog">
+		<dialog
+			id={id}
+			ref={dialogRef}
+			className={`modal-dialog ${className && className}`}
+		>
 			<div className="modal-content">{children}</div>
 		</dialog>
 	);

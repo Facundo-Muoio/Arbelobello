@@ -2,7 +2,7 @@ import "./Footer.css";
 import Logo from "../../images/logo.png";
 import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
-import { BiLogoGmail } from "react-icons/bi";
+import { GrMailOption } from "react-icons/gr";
 import * as React from "react";
 import { createObserver } from "../../helpers/helpers";
 import { useAnimation } from "../../hooks/hooks";
@@ -22,7 +22,7 @@ export default function Footer() {
 					<div className="wraper-social-medias">
 						<FaInstagram className="icon" />
 						<FaWhatsapp className="icon" />
-						<BiLogoGmail className="icon" />
+						<GrMailOption className="icon" />
 					</div>
 					<div className="wraper-logo">
 						<img src={Logo} alt="" />

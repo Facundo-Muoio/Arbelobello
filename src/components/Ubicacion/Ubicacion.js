@@ -1,25 +1,30 @@
 import { useRef, useState } from "react";
 import "./Ubicacion.css";
-import { createObserver } from "../../helpers/helpers";
+import { createObserver, parseTextToJSX } from "../../helpers/helpers";
 import { useAnimation } from "../../hooks/hooks";
+import { useFetch } from "../../hooks/hooks";
 
 export default function Ubicacion() {
 	const [isVisible, setIsVisible] = useState();
 	const ubicacionRef = useRef();
 	ubicacionObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
+	const { data: dataText } = useFetch(urlText);
+	let texts;
 
 	useAnimation(ubicacionObserver, ubicacionRef);
 
+	if (dataText) {
+		texts = dataText.values.filter(text => text[0].trim() === "ubicacion");
+	}
+
 	return (
 		<div className="container-ubicaicion" ref={ubicacionRef}>
-			{isVisible && (
+			{isVisible && dataText ? (
 				<>
 					<div className="container-ubicacion-texts">
-						<h1>¿Dónde estamos?</h1>
-						<p>
-							Alfonsina Storni, Roberto Fontanarrosa &, X5197XAE Santa Mónica,
-							Córdoba
-						</p>
+						<h1>{parseTextToJSX(texts[0][2])}</h1>
+						<p>{parseTextToJSX(texts[1][2])}</p>
 						<a
 							href="https://www.google.com/maps/place/Alberobello+Casa+Serrana/@-32.070774,-64.5714023,17z/data=!4m9!3m8!1s0x95d2bbc9f3eaba11:0xa6d201255950f70b!5m2!4m1!1i2!8m2!3d-32.0700632!4d-64.5719045!16s%2Fg%2F11lcny9mw9?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D"
 							target="blank"
@@ -38,6 +43,8 @@ export default function Ubicacion() {
 						></iframe>
 					</div>
 				</>
+			) : (
+				""
 			)}
 		</div>
 	);

@@ -1,0 +1,17 @@
+.btn-opinions {
+	color: var(--main-bg-color);
+	background-color: var(--third-bg-color);
+	width: 300px;
+	height: fit-content;
+	font-size: 1rem;
+	position: absolute;
+	right: calc(5% + 1em);
+	bottom: 2rem;
+	outline: none;
+	border: none;
+	font-family: "variableFontThing";
+	transform: translateX(100px);
+	opacity: 0;
+	filter: blur(20);
+	animation: fadeInBlur linear 0.5s forwards;
+}

@@ -8,7 +8,7 @@ import {
 	HiOutlineArrowSmallRight,
 } from "react-icons/hi2";
 import { useState, useRef } from "react";
-import { createObserver } from "../../helpers/helpers.js";
+import { createObserver, parseTextToJSX } from "../../helpers/helpers.js";
 
 export default function Carrousel() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/CAROUSEL?key=${process.env.API_KEY}`;
@@ -40,7 +40,6 @@ export default function Carrousel() {
 		const sliderWidth = ref.current.parentElement.parentElement.offsetWidth;
 		const controlContainer = ref.current.parentElement;
 		if (currentIndex < data.values.slice(2).length - 1) {
-			console.log("click");
 			setCurrentIndex(prev => {
 				controlContainer.style.transform = `translateX(${
 					sliderWidth * (currentIndex + 1)
@@ -61,7 +60,7 @@ export default function Carrousel() {
 					  (
 							<>
 								<div className="wraper-text-carrousel">
-									<p>{`${texts[0][2]}`}</p>
+									<p>{parseTextToJSX(texts[0][2])}</p>
 								</div>
 								<Slider
 									style={{ transform: `translateX(${-100 * currentIndex}%)` }}

@@ -35,58 +35,57 @@
 	vertical-align: center;
 }
 
-.btn-opinions {
-	color: var(--main-bg-color);
-	background-color: var(--third-bg-color);
-	width: 300px;
-	height: fit-content;
-	font-size: 1rem;
-	position: absolute;
-	right: 5%;
-	bottom: 2rem;
-	outline: none;
-	border: none;
-	font-family: "variableFontThing";
-}
-
 .arrow-opinion {
 	color: var(--main-bg-color);
 	background-color: var(--third-bg-color);
 	cursor: pointer;
 }
 
-.container-slider-cards {
+.wraper-slider-cards {
 	width: 90%;
-	height: 100%;
 	margin: auto;
-	display: flex;
-	align-items: center;
 	overflow: hidden;
+	background-color: transparent;
+	opacity: 0;
+	animation: fadeIn 0.5s linear 0.5s forwards;
 }
 
-.slider-content {
-	display: flex;
+.slider-cards {
 	width: 100%;
-	height: 100%;
-	transition: transform 0.5s ease;
+	gap: 1em;
+	display: flex;
+	overflow-x: hidden;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
 	background-color: transparent;
+
+	/* transition: transform 0.5s ease; */
 }
 
 .card-opinion {
-	min-width: 33%;
-	height: 100%;
-	margin: auto 0.33%;
+	scroll-snap-align: start;
+	max-width: calc(33.33% - 1em);
+	min-width: calc(33.33% - 1em);
+	aspect-ratio: 1/1;
 	display: flex;
-	aspect-ratio: 1 / 1;
 	justify-content: space-around;
 	flex-direction: column;
 	align-items: center;
 	font-family: "variableFont";
-	position: relative;
+	opacity: 0;
+	animation: fadeInBtm 0.9s linear forwards;
 }
 
 .card-opinion:first-child {
-	margin-left: 0;
+	animation-delay: 0.3s;
+}
+
+.card-opinion:nth-child(2) {
+	animation-delay: 0.6s;
+}
+
+.card-opinion:nth-child(3) {
+	animation-delay: 0.9s;
 }
 
 .card-opinion strong {
@@ -98,11 +97,21 @@
 	height: max-content;
 }
 
+.card-opinion > div:first-child {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 0.75em;
+}
+
 .card-opinion img {
+	width: 8rem;
+	height: 8rem;
 	border-radius: 50%;
 }
 
-.card-opinion h4 {
+.card-opinion > div:first-child h4 {
+	font-size: 1.25rem;
 	text-align: center;
 	color: var(--opinions-bg-color);
 }
@@ -111,7 +120,27 @@
 	color: var(--third-bg-color);
 }
 
+.container-opinions-text > h1 {
+	opacity: 0;
+	transform: translateX(-100px);
+	filter: blur(20);
+	animation: fadeInBlur 0.5s linear forwards;
+}
+
+.container-opinions-text > p {
+	opacity: 0;
+	transform: translateX(100px);
+	filter: blur(20);
+	animation: fadeInBlur 0.5s linear forwards;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+	.container-opinions {
+		grid-template-rows: 20% 60% 20%;
+		min-height: auto;
+		height: auto;
+	}
+
 	.container-opinions-text h1 {
 		font-size: 2.25rem;
 	}
@@ -122,17 +151,13 @@
 	}
 
 	.card-opinion {
-		min-width: 50%;
-	}
-
-	.card-opinion > div:first-child {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		min-width: calc(50% - 1em);
+		height: 100%;
+		aspect-ratio: 1/1.25;
 	}
 
 	.card-opinion strong {
-		right: 0.15rem;
+		right: 0.15em;
 		top: 0px;
 		font-size: 5.5rem;
 		height: max-content;
@@ -161,7 +186,7 @@
 		max-width: 220px;
 		padding: 0.5rem;
 		margin-left: auto;
-		margin-right: 5%;
+		margin-right: calc(5% - 1rem);
 		margin-top: auto;
 		margin-bottom: auto;
 		font-size: 0.75rem;
@@ -173,7 +198,7 @@
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1280px) {
+/* @media screen and (min-width: 1025px) and (max-width: 1280px) {
 	.card-opinion {
 		max-height: 400px;
 	}
@@ -236,8 +261,7 @@
 	animation: fadeInBlur 0.5s linear forwards;
 }
 
-.card-opinion,
-.container-opinions .btn-opinions {
+.btn-opinions {
 	opacity: 0;
 	animation: fadeInBlur 0.5s linear forwards;
 }
@@ -273,9 +297,9 @@
 
 .container-opinions .btn-opinions {
 	animation-delay: 1s;
-}
+}  */
 
-@media screen and (min-width: 1281px) and (max-width: 1439px) {
+/* @media screen and (min-width: 1281px) and (max-width: 1439px) {
 	.container-opinions-text h1 {
 		font-size: 3rem;
 	}
@@ -339,7 +363,7 @@
 	.arrow-opinion {
 		font-size: 2.3rem;
 	}
-}
+}  */
 
 @media screen and (min-width: 1920px) {
 	.container-opinions-text h1 {
@@ -365,7 +389,6 @@
 		text-align: center;
 		font-size: 1.05rem;
 	}
-
 	.card-opinion p {
 		width: 90%;
 		font-size: 1.15rem;

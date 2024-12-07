@@ -6,11 +6,10 @@ export default function Slider({ children, style }) {
 	const contextValue = {
 		length: React.Children.count(children),
 	};
-	console.log(style);
 
 	return (
 		<SliderContext.Provider value={contextValue}>
-			<div class="wraper-slider">
+			<div className="wraper-slider">
 				<div className="slider" style={style}>
 					{children}
 				</div>

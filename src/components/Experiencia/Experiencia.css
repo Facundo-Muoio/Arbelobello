@@ -5,6 +5,7 @@
 	grid-template-columns: 1fr 1fr;
 	background-color: var(--main-bg-color);
 	align-items: center;
+	scroll-snap-align: start;
 }
 
 .experiencie-images-container {

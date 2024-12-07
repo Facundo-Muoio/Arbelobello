@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { createObserver } from "../../helpers/helpers";
+import { createObserver, parseTextToJSX } from "../../helpers/helpers";
 import { useAnimation, useFetch } from "../../hooks/hooks";
 import "./Experiencia.css";
 
@@ -10,9 +10,16 @@ export default function Experiencia() {
 		threshold: 0.8,
 	});
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/EXPERIENCIA?key=${process.env.API_KEY}`;
+	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
+	const { data: dataText } = useFetch(urlText);
 	const { data } = useFetch(url);
+	let texts;
 
 	useAnimation(contentObserver, contentRef);
+
+	if (dataText) {
+		texts = dataText.values.filter(text => text[0].trim() === "experiencia");
+	}
 
 	return (
 		<div className="container-experience" ref={contentRef}>
@@ -58,15 +65,12 @@ export default function Experiencia() {
 					</div>
 
 					<div className="experience-text-container">
-						<div className="text-box">
-							<h1>Alberobello Casa Serrana es más que un destino turístico</h1>
-							<p>
-								es una experiencia única, íntima y <br /> personalizada. Un
-								lugar donde el tiempo <br />
-								se detiene y los recuerdos florecen como <br /> las flores de la
-								montaña.
-							</p>
-						</div>
+						{dataText && (
+							<div className="text-box">
+								<h1>{parseTextToJSX(texts[0][2])}</h1>
+								<p>{parseTextToJSX(texts[1][2])}</p>
+							</div>
+						)}
 						<div className="button-box">
 							<button className="btn-experience">
 								<strong>VER MÁS</strong>
