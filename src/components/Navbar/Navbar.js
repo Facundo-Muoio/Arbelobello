@@ -27,7 +27,7 @@ export default function Navbar() {
 
 	const { showToast } = useContext(ToastContext);
 
-	handlerClickOutside = event => {
+	const handlerClickOutside = event => {
 		if (liCheckIn.current && !liCheckIn.current.contains(event.target)) {
 			document.querySelector("body").classList.remove("no-scroll");
 		}
