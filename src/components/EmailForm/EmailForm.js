@@ -62,8 +62,9 @@ export default function EmailForm({ isOpen, setIsOpen }) {
 		}
 	};
 
-	handlerClickModal = () => setIsOpen(false);
-	handlerKeyDown = event => (event.code === "Escape" ? setIsOpen(false) : "");
+	const handlerClickModal = () => setIsOpen(false);
+	const handlerKeyDown = event =>
+		event.code === "Escape" ? setIsOpen(false) : "";
 
 	return (
 		<dialog
