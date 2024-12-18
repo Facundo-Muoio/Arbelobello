@@ -14,9 +14,9 @@ export default function Introduccion() {
 	let texts;
 
 	useEffect(() => {
-		const observerText = createObserver(setTextVisibility, { threshold: 0.3 });
+		const observerText = createObserver(setTextVisibility, { threshold: 0.9 });
 		const observerGallery = createObserver(setGalleryVisibility, {
-			threshold: 0.5,
+			threshold: 0.9,
 		});
 
 		if (sectionRef.current) {
