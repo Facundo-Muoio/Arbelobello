@@ -5,13 +5,11 @@ section {
 	margin: 3rem auto;
 	margin-top: 6rem;
 	scroll-snap-align: start;
-	justify-content: space-around;
 }
 
 #introducción {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
 }
 
 #introducción h1 {
