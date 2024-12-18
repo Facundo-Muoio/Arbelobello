@@ -7,7 +7,6 @@
 	display: flex;
 	padding: 4rem;
 	position: relative;
-	/* justify-content: space-between; */
 	color: var(--main-bg-color);
 	scroll-snap-align: start;
 }
@@ -17,11 +16,22 @@
 	display: flex;
 	flex-direction: row;
 	align-items: end;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.wraper-social-medias a,
+.container-email-form,
+.container-email-form button {
+	background-color: transparent;
+}
+
+.container-email-form button .icon {
+	height: fit-content;
 }
 
 .icon {
 	font-size: 5rem;
-	margin-right: 1.5rem;
 	background-color: transparent;
 	color: var(--main-bg-color);
 	cursor: pointer;
@@ -116,6 +126,10 @@
 	animation-delay: 0.7s;
 }
 
+.toast-footer {
+	right: 2rem;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.container-footer {
 		height: 25svh;
@@ -123,7 +137,8 @@
 	}
 
 	.container-footer {
-		padding: 2rem;
+		padding: 2em;
+		height: 33vh !important;
 	}
 
 	.icon {
@@ -143,12 +158,12 @@
 
 	.wraper-logo h1 {
 		font-family: "ciabatta";
-		font-size: 3rem;
+		font-size: var(--font-size-xxl);
 	}
 
 	.wraper-logo p {
 		font-family: "variableFont";
-		font-size: 1rem;
+		font-size: var(--font-size-base);
 	}
 
 	.wraper-button button {
@@ -180,6 +195,46 @@
 	}
 }
 
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
+	.container-footer {
+		min-height: 30svh;
+		height: 30vh;
+		height: 30svh;
+		display: block;
+		position: relative;
+		padding: 1rem;
+		display: flex;
+		flex-direction: row;
+		align-items: end;
+	}
+
+	.icon {
+		font-size: 4rem;
+		margin-right: 0.75rem;
+		background-color: transparent;
+	}
+
+	.wraper-logo img {
+		background-color: transparent;
+		width: 280px;
+	}
+
+	.wraper-logo h1 {
+		font-size: var(--font-size-xxl);
+	}
+
+	.wraper-logo p {
+		font-family: "variableFont";
+		font-size: var(--font-size-base);
+	}
+
+	.wraper-button button {
+		width: 280px;
+		padding: 0.75rem;
+		font-size: 1.5rem;
+	}
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
 	.container-footer {
 		height: 30svh;
@@ -199,11 +254,11 @@
 	}
 
 	.wraper-logo h1 {
-		font-size: 3rem;
+		font-size: var(--font-size-xxl);
 	}
 
 	.wraper-logo p {
-		font-size: 1rem;
+		font-size: var(--font-size-base);
 	}
 
 	.wraper-button button {
@@ -227,37 +282,110 @@
 	}
 }
 
-@media screen and (min-width: 1441px) and (max-width: 1919px) {
+@media screen and (max-width: 767px) {
 	.container-footer {
-		min-height: 28svh;
-		height: 28svh;
-		display: block;
-		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		gap: 1em;
+		position: unset;
+		height: 50vh;
+		height: 50svh;
+		padding: 1em;
+	}
+
+	.wraper-social-medias {
+		position: unset;
+	}
+
+	.container-footer > .wraper-logo {
+		position: unset !important;
+		margin: 0;
+	}
+
+	.wraper-button {
+		position: unset;
 	}
 
 	.icon {
-		font-size: 4rem;
-		margin-right: 0.75rem;
-		background-color: transparent;
+		font-size: var(--font-size-xxl);
+	}
+
+	.wraper-logo img {
+		max-width: 200px;
+	}
+
+	.wraper-logo h1 {
+		font-size: var(--font-size-xxl);
+	}
+
+	.wraper-logo p {
+		font-size: var(--font-size-base);
+	}
+
+	.wraper-button button {
+		min-width: fit-content;
+		max-width: 200px;
+		padding: 0.75em 2.5em;
+		letter-spacing: 4px;
+		font-size: var(--font-size-base);
+	}
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+	.container-footer {
+		position: relative;
+		padding: 0.25em;
+		height: 50vh !important;
+		height: 50svh !important;
+	}
+
+	.icon {
+		font-size: var(--font-size-xxl);
 	}
 
 	.wraper-logo img {
 		background-color: transparent;
-		width: 325px;
+		max-width: 220px;
 	}
 
 	.wraper-logo h1 {
-		font-size: 4rem;
+		font-size: var(--font-size-xxl);
 	}
 
 	.wraper-logo p {
-		font-family: "variableFont";
-		font-size: 1.5rem;
+		font-size: var(--font-size-base);
 	}
 
 	.wraper-button button {
-		width: 280px;
-		padding: 0.75rem;
-		font-size: 1.5rem;
+		width: fit-content;
+		padding: 0.45em 2em;
+		font-size: var(--font-size-base);
+	}
+
+	.wraper-social-medias {
+		position: absolute;
+		left: 1em;
+		bottom: 1em;
+		gap: 0.5em;
+		align-items: center;
+		justify-content: end;
+	}
+
+	.wraper-logo {
+		width: fit-content;
+		height: fit-content;
+		position: absolute;
+		bottom: 1em;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+
+	.wraper-button {
+		position: absolute;
+		right: 1em;
+		bottom: 1em;
 	}
 }

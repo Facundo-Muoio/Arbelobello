@@ -6,12 +6,6 @@ import { useFetch } from "../../hooks/hooks.js";
 
 export default function Introduccion() {
 	const sectionRef = useRef(null);
-	useEffect(() => {
-		console.log("GalleryImage mounted");
-		return () => {
-			console.log("GalleryImage unmounted");
-		};
-	}, []);
 
 	const [textVisibility, setTextVisibility] = useState(false);
 	const [galleryVisibility, setGalleryVisibility] = useState(false);
@@ -22,7 +16,7 @@ export default function Introduccion() {
 	useEffect(() => {
 		const observerText = createObserver(setTextVisibility, { threshold: 0.3 });
 		const observerGallery = createObserver(setGalleryVisibility, {
-			threshold: 0.85,
+			threshold: 0.5,
 		});
 
 		if (sectionRef.current) {
@@ -43,7 +37,7 @@ export default function Introduccion() {
 	}
 
 	return (
-		<section id="introducción" ref={sectionRef}>
+		<section id="introducción" className="section" ref={sectionRef}>
 			{textVisibility && dataText ? (
 				<div className="contenedor-intro">
 					<p>{parseTextToJSX(texts[0][2])}</p>

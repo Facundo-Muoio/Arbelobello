@@ -1,9 +1,11 @@
 section {
 	width: 80%;
-	height: 100vh;
-	height: 100dvh;
-	margin: auto;
+	min-height: 100vh;
+	min-height: 100svh;
+	margin: 3rem auto;
+	margin-top: 6rem;
 	scroll-snap-align: start;
+	justify-content: space-around;
 }
 
 #introducción {
@@ -14,18 +16,15 @@ section {
 
 #introducción h1 {
 	font-family: "ciabatta";
-	font-size: 6rem;
 }
 
 #introducción h2 {
 	font-family: "variableFont";
-	font-size: 2rem;
 	letter-spacing: 3px;
 }
 
 #introducción p {
 	color: var(--third-bg-color);
-	font-size: 1.8rem;
 	letter-spacing: 1px;
 	font-family: "variableFont";
 }
@@ -36,9 +35,9 @@ section {
 }
 
 .contenedor-intro {
-	padding: 2rem;
+	padding: 2rem 0;
 	width: 50%;
-	height: 50%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -94,16 +93,16 @@ section {
 	}
 
 	#introducción h1 {
-		font-size: 3rem;
+		font-size: var(--font-size-xxl);
 	}
 
 	#introducción h2 {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 		letter-spacing: 1.5px;
 	}
 
 	#introducción p {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 		letter-spacing: 0.8px;
 		margin: 1.5rem 0;
 		margin-bottom: 1rem;
@@ -111,12 +110,27 @@ section {
 	}
 
 	#introducción b {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 		letter-spacing: 2px;
 	}
 
 	#introducción p br {
 		display: none;
+	}
+}
+
+@media screen and (width >= 1025px) and (width <= 1280px) {
+	#introducción p,
+	#introducción b {
+		font-size: var(--font-size-md) !important;
+	}
+
+	#introducción h1 {
+		font-size: var(--font-size-xxl) !important;
+	}
+
+	#introducción h2 {
+		font-size: var(--font-size-md) !important;
 	}
 }
 
@@ -143,58 +157,121 @@ section {
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1279px) {
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
 	#introducción h1 {
-		font-size: 4.5rem;
+		font-size: var(--font-size-xxl);
 	}
 
 	#introducción h2 {
-		font-size: 1.75rem;
+		font-size: var(--font-size-md);
 	}
 
 	#introducción p {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 	}
 	#introducción b {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 	}
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
+@media screen and (min-width: 1281px) and (max-width: 1439px) {
 	#introducción h1 {
-		font-size: 4.5rem;
+		font-size: var(--font-size-xxl);
+	}
+
+	#introducción h2 {
+		font-size: var(--font-size-md);
 	}
 
 	#introducción p {
-		font-size: 1.75rem;
+		font-size: var(--font-size-md);
 	}
 	#introducción b {
-		font-size: 1.75rem;
+		font-size: var(--font-size-md);
 	}
 }
 
-@media screen and (min-width: 1441px) and (max-width: 1919px) {
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
 	#introducción h1 {
-		font-size: 5.5rem;
+		font-size: var(--font-size-xxxl);
+	}
+
+	#introduccion h2 {
+		font-size: var(--font-size-lg);
 	}
 
 	#introducción p {
-		font-size: 2rem;
+		font-size: var(--font-size-lg);
 	}
 	#introducción b {
-		font-size: 2rem;
+		font-size: var(--font-size-lg);
 	}
 }
 
 @media screen and (min-width: 1920px) {
+	section {
+		justify-content: space-around;
+	}
+
 	#introducción h1 {
-		font-size: 6rem;
+		font-size: var(--font-size-xxxl);
+	}
+	#introduccion h2 {
+		font-size: var(--font-size-lg);
 	}
 
 	#introducción p {
-		font-size: 2rem;
+		font-size: var(--font-size-lg);
 	}
 	#introducción b {
-		font-size: 2rem;
+		font-size: var(--font-size-lg);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#introducción {
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		width: 100svw;
+		height: 100svh;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+	}
+
+	#introducción p {
+		font-size: var(--font-size-base);
+	}
+
+	#introducción b {
+		font-size: var(--font-size-base);
+	}
+
+	#introducción h1 {
+		margin-top: 0.25em;
+		font-size: var(--font-size-xxl);
+	}
+
+	#introducción h2 {
+		font-size: var(--font-size-base);
+		letter-spacing: 0;
+	}
+
+	.contenedor-intro {
+		width: 100%;
+		height: auto;
+		padding: 1em;
+		justify-content: end;
+	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+	#introducción {
+		height: fit-content;
+		min-height: 100svh;
+		min-height: 100vh;
+		margin-bottom: 2em;
+		justify-content: end;
 	}
 }

@@ -2,10 +2,10 @@
 	"name": "albero_bello",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "parcel public/index.html"
+		"start": "parcel public/index.html",
+		"build": "parcel build public/index.html"
 	},
 	"keywords": [],
 	"author": "",

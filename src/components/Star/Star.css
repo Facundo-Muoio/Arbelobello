@@ -43,3 +43,13 @@
 		font-size: 2.5rem;
 	}
 }
+
+@media screen and (max-width: 767px) {
+	.container-opinions-stars .fill {
+		font-size: var(--font-size-xxl);
+	}
+
+	.container-opinions-stars .unfill {
+		font-size: var(--font-size-xxl);
+	}
+}

@@ -1,0 +1,95 @@
+.container-email-form {
+	margin: auto;
+	border: none;
+	box-shadow: 0 4 12 #000;
+}
+
+.container-email-form .close-btn {
+	display: block;
+	background-color: transparent;
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	cursor: pointer;
+	color: var(--main-bg-color);
+	font-size: 1.25rem;
+}
+
+.wraper-logo-form {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 0.5em;
+}
+
+.form .logo-form {
+	width: 10rem;
+	background-color: transparent;
+	color: var(--main-bg-color);
+}
+
+.wraper-logo-form h2 {
+	background-color: transparent;
+	font-family: "ciabatta";
+	font-size: 2rem;
+}
+.wraper-logo-form h3 {
+	background-color: transparent;
+	font-size: 0.8rem;
+	font-family: "variableFont";
+}
+
+.container-email-form::backdrop {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+}
+
+.container-textArea-email-form {
+	width: 80%;
+	height: 200px;
+	position: relative;
+}
+
+.container-textArea-email-form textarea {
+	width: 100%;
+	height: 100%;
+	resize: none;
+	padding: 0.5em;
+	font-family: "variableFont";
+	font-size: 0.9rem;
+	outline: none;
+	color: var(--main-bg-color);
+	background-color: var(--third-bg-color);
+	border: 1px solid #898989;
+}
+
+.container-textArea-email-form label {
+	color: #898989;
+	background-color: var(--third-bg-color);
+	position: absolute;
+	top: 7.5%;
+	left: 0.5em;
+	transform: translateY(-50%);
+	transition: 0.3s;
+}
+
+.container-textArea-email-form textarea:focus {
+	border: 1px solid var(--main-bg-color);
+	color: var(--main-bg-color);
+}
+
+.container-textArea-email-form:focus {
+	color: var(--main-bg-color);
+}
+
+.container-textArea-email-form textarea:focus ~ label,
+.container-textArea-email-form textarea:valid ~ label {
+	top: -4px;
+	font-size: 0.85em;
+	background-color: var(--third-bg-color);
+	padding: 0 0.5em;
+}

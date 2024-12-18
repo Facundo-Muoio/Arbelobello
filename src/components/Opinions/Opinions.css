@@ -7,6 +7,7 @@
 	display: grid;
 	grid-template-rows: 20% 60% 20%;
 	position: relative;
+	margin-top: 3rem;
 }
 
 .container-opinions-text,
@@ -43,6 +44,7 @@
 
 .wraper-slider-cards {
 	width: 90%;
+	height: 100%;
 	margin: auto;
 	overflow: hidden;
 	background-color: transparent;
@@ -52,9 +54,10 @@
 
 .slider-cards {
 	width: 100%;
+	height: 100%;
 	gap: 1em;
 	display: flex;
-	overflow-x: hidden;
+	overflow: hidden;
 	scroll-snap-type: x mandatory;
 	scroll-behavior: smooth;
 	background-color: transparent;
@@ -67,6 +70,7 @@
 	max-width: calc(33.33% - 1em);
 	min-width: calc(33.33% - 1em);
 	aspect-ratio: 1/1;
+	max-height: 100%;
 	display: flex;
 	justify-content: space-around;
 	flex-direction: column;
@@ -137,29 +141,27 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.container-opinions {
 		grid-template-rows: 20% 60% 20%;
-		min-height: auto;
-		height: auto;
+		height: 100vh;
 	}
 
 	.container-opinions-text h1 {
-		font-size: 2.25rem;
+		font-size: var(--font-size-xl);
 	}
 
 	.container-opinions-text p {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 		letter-spacing: 2px;
 	}
 
 	.card-opinion {
-		min-width: calc(50% - 1em);
+		min-width: calc(50% - 1rem);
 		height: 100%;
-		aspect-ratio: 1/1.25;
 	}
 
 	.card-opinion strong {
 		right: 0.15em;
 		top: 0px;
-		font-size: 5.5rem;
+		font-size: 7rem;
 		height: max-content;
 	}
 
@@ -170,12 +172,12 @@
 
 	.card-opinion h4 {
 		text-align: center;
-		font-size: 0.75rem;
+		font-size: var(--font-size-base) !important;
 	}
 
 	.card-opinion p {
 		width: 90%;
-		font-size: 0.85rem;
+		font-size: var(--font-size-base);
 		text-align: center;
 	}
 
@@ -183,10 +185,9 @@
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		max-width: 220px;
+		max-width: 220px !important;
 		padding: 0.5rem;
 		margin-left: auto;
-		margin-right: calc(5% - 1rem);
 		margin-top: auto;
 		margin-bottom: auto;
 		font-size: 0.75rem;
@@ -198,17 +199,17 @@
 	}
 }
 
-/* @media screen and (min-width: 1025px) and (max-width: 1280px) {
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
 	.card-opinion {
-		max-height: 400px;
+		aspect-ratio: 1 / 0.9;
 	}
 
 	.container-opinions-text h1 {
-		font-size: 3rem;
+		font-size: var(--font-size-xl);
 	}
 
 	.container-opinions-text p {
-		font-size: 1.75rem;
+		font-size: var(--font-size-md);
 		letter-spacing: 2px;
 	}
 	.card-opinion > div:first-child {
@@ -225,32 +226,19 @@
 	}
 
 	.card-opinion img {
-		width: 6rem;
-		height: 6rem;
+		width: 5rem;
+		height: 5rem;
 	}
 
 	.card-opinion h4 {
 		text-align: center;
-		font-size: 0.85rem;
+		font-size: var(--font-size-sm) !important	;
 	}
 
 	.card-opinion p {
 		width: 90%;
-		font-size: 0.9rem;
+		font-size: 0.85rem;
 		text-align: center;
-	}
-
-	.btn-opinions {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		max-width: 250px;
-		padding: 0.75rem;
-		font-size: 0.9rem;
-	}
-
-	.arrow-opinion {
-		font-size: 2.25rem;
 	}
 }
 
@@ -297,31 +285,69 @@
 
 .container-opinions .btn-opinions {
 	animation-delay: 1s;
-}  */
+}
 
-/* @media screen and (min-width: 1281px) and (max-width: 1439px) {
+@media screen and (min-width: 1281px) and (max-width: 1439px) {
 	.container-opinions-text h1 {
-		font-size: 3rem;
+		font-size: var(--font-size-xl);
 	}
 
 	.container-opinions-text p {
-		font-size: 1.75rem;
+		font-size: var(--font-size-md);
 		letter-spacing: 2px;
+	}
+
+	.card-opinion strong {
+		font-size: 7rem;
+	}
+
+	.card-opinion img {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	.card-opinion h4 {
+		font-size: var(--font-size-base) !important;
+	}
+
+	.card-opinion p {
+		width: 90%;
+		font-size: var(--font-size-sm);
+		text-align: center;
 	}
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1919px) {
 	.container-opinions-text h1 {
-		font-size: 3.75rem;
+		font-size: var(--font-size-xxl);
 	}
 
 	.container-opinions-text p {
-		font-size: 2rem;
+		font-size: var(--font-size-lg);
 		letter-spacing: 2px;
+	}
+
+	.card-opinion strong {
+		font-size: 8rem;
+	}
+
+	.card-opinion img {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.card-opinion h4 {
+		font-size: var(--font-size-base) !important;
+	}
+
+	.card-opinion p {
+		width: 90%;
+		font-size: var(--font-size-base);
+		text-align: center;
 	}
 }
 
-@media screen and (min-width: 1281px) and (max-width: 1919px) {
+@media screen and (min-width: 1920px) {
 	.card-opinion > div:first-child {
 		display: flex;
 		flex-direction: column;
@@ -363,7 +389,7 @@
 	.arrow-opinion {
 		font-size: 2.3rem;
 	}
-}  */
+}
 
 @media screen and (min-width: 1920px) {
 	.container-opinions-text h1 {
@@ -407,5 +433,91 @@
 
 	.arrow-opinion {
 		font-size: 2.3rem;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.container-opinions-text h1 {
+		font-size: var(--font-size-xxl);
+	}
+
+	.container-opinions-text p {
+		font-size: var(--font-size-base);
+	}
+
+	.card-opinion {
+		min-width: calc(100% - 1rem);
+		height: 100%;
+	}
+
+	.card-opinion strong {
+		right: 0.15rem;
+		top: 0px;
+		font-size: 8rem;
+		height: max-content;
+	}
+
+	.card-opinion img {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.card-opinion h4 {
+		font-size: var(--font-size-md) !important;
+	}
+
+	.card-opinion p {
+		text-align: center;
+		font-size: var(--font-size-sm);
+		width: 90%;
+	}
+
+	.btn-opinions {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		max-width: 220px !important;
+		padding: 0.5em;
+		margin-left: auto;
+		margin-top: auto;
+		margin-bottom: auto;
+		font-size: 0.75em;
+		right: unset !important;
+		justify-self: center !important;
+	}
+
+	.arrow-opinion {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+	.container-opinions {
+		width: 100%;
+		min-height: 160vh;
+		min-height: 160svh;
+		display: grid;
+	}
+
+	.wraper-slider-cards {
+		width: 90%;
+		height: 100vh;
+		height: 100svh;
+		margin: auto;
+	}
+
+	.slider-cards {
+		aspect-ratio: 16 / 9;
+		width: 100%;
+		gap: 1em;
+		margin: auto;
+	}
+	.card-opinion {
+		min-width: calc(100% - 1rem);
+		height: 100%;
+	}
+
+	.btn-opinions {
+		bottom: 1em !important;
 	}
 }

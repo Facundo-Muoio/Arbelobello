@@ -7,7 +7,7 @@
 .background {
 	width: 100vw;
 	height: 100vh;
-	z-index: -1;
+	z-index: 1;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	background-color: var(--third-bg-color);
@@ -15,11 +15,12 @@
 
 header h1 {
 	font-family: "ciabatta";
-	font-size: 5rem;
+	font-size: var(--font-size-xxxl);
 }
 
 header h2 {
 	font-family: "variableFont";
+	font-size: var(--font-size-md);
 }
 
 header h1,
@@ -81,8 +82,9 @@ header {
 
 #container-logo_sierraBaja {
 	position: relative;
-	max-width: 400px;
+	max-width: 370px;
 	overflow: hidden;
+	bottom: -10px;
 }
 
 .logo {
@@ -93,11 +95,10 @@ header {
 
 #container-logo_sierraAlta {
 	overflow: hidden;
-	max-width: 135px;
+	max-width: 100px;
 	position: relative;
 	left: 75px;
-	top: 14px;
-	z-index: 1;
+	top: 11px;
 }
 
 .mask {
@@ -135,28 +136,16 @@ header {
 	}
 }
 
-.container-videos {
-	width: 100vw;
-	height: 100vh;
-	background-color: transparent;
-	display: flex;
-	flex-direction: row;
-}
-
-.left-video,
-.right-video {
-	width: 100%;
-	height: 100%;
-}
-
 .path {
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	max-height: 25vh;
-	width: 100vw;
+	width: 100%;
 	animation: fade-in-bottom 1.25s cubic-bezier(0.39, 0.575, 0.565, 1) 2.5s both;
 	background-color: transparent;
+	object-fit: cover;
+	position: absolute;
+	bottom: -17%;
 }
 
 @keyframes fade-in-bottom {
@@ -167,5 +156,55 @@ header {
 	100% {
 		transform: translateY(0);
 		opacity: 1;
+	}
+}
+
+@media screen and (min-width: 1279px) and (max-width: 1399px) {
+	#container-logo_sierraBaja {
+		max-width: 320px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	header {
+		height: 100svh;
+	}
+
+	.background {
+		width: 100vw;
+		height: 100vh;
+		height: 100svh;
+		max-height: 100svh;
+		grid-template-columns: 1fr;
+	}
+
+	.container-FadeIgame {
+		width: 100%;
+		height: 100%;
+	}
+
+	.background .container-FadeIgame:last-child {
+		display: none;
+	}
+
+	#container-logo_sierraAlta {
+		width: 80px;
+		left: 4em;
+		top: 0.1em;
+	}
+
+	#container-logo_sierraBaja {
+		max-width: 235px;
+		top: 0.05em;
+	}
+
+	.path {
+		bottom: 0;
+	}
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+	.path {
+		bottom: -14%;
 	}
 }

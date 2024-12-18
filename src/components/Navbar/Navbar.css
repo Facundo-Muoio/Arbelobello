@@ -1,28 +1,26 @@
 nav {
 	position: absolute;
-	bottom: 1rem;
-	width: 90vw;
+	width: 92.5vw;
 	margin: 1rem;
+	bottom: 0;
 }
 
-/* Estilo para el input */
 .custom-input {
-	background: var(--main-bg-color); /* Fondo oscuro */
-	color: var(--third-bg-color); /* Texto claro */
+	background: var(--main-bg-color);
+	color: var(--third-bg-color);
 	border: none;
 	padding: 10px;
-	font-size: 1.5rem;
+	font-size: var(--font-md-base);
 	font-family: "variableFontThing";
 	outline: none;
 	cursor: pointer;
-	width: 100%; /* Ajusta según necesites */
+	width: 100%;
 }
 
 .custom-input::placeholder {
 	color: var(--third-bg-color);
 }
 
-/* Estilo para el calendario emergente */
 .custom-calendar {
 	background: var(--third-bg-color);
 	color: var(--main-bg-color);
@@ -31,7 +29,6 @@ nav {
 .react-datepicker-popper,
 .react-datepicker {
 	border: none !important;
-	/* border-radius: 1rem !important; */
 	background-color: var(--third-bg-color) !important;
 	border-radius: none !important;
 	padding: 0.5rem;
@@ -49,7 +46,7 @@ nav {
 .react-datepicker__month,
 .react-datepicker__week,
 .react-datepicker__day {
-	background-color: var(--third-bg-color) !important; /* Fondo oscuro */
+	background-color: var(--third-bg-color) !important;
 	color: var(--main-bg-color) !important;
 	font-family: "variableFontThing";
 }
@@ -94,22 +91,27 @@ nav {
 .react-datepicker-popper {
 	opacity: 0;
 	animation: fadeIn 0.2s linear forwards;
+	left: 1rem !important;
+}
+
+.react-datepicker__day--today {
+	color: var(--secondary-bg-color) !important;
 }
 
 #ul-navbar {
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
-	width: 90vw;
-	width: 90dvw;
+	width: 100%;
+	width: 100%;
 	margin: auto;
 	align-items: center;
 	font-family: "variableFontThing";
 }
 
-#ul-navbar li {
+#ul-navbar .li {
 	color: var(--third-bg-color);
 	list-style: none;
-	font-size: 1.5rem;
+	font-size: var(--font-size-md);
 	text-align: center;
 }
 
@@ -117,10 +119,10 @@ nav {
 	font-family: "variableFontBold";
 }
 
-#ul-navbar > li:nth-child(even) {
+#ul-navbar > .li:nth-child(even) {
 	font-family: "variableFont-italic";
 	transform: skewX(-15deg);
-	font-size: 2.2rem;
+	font-size: var(--font-size-lg);
 	flex-grow: 1;
 }
 
@@ -133,7 +135,7 @@ nav {
 #ul-navbar button svg {
 	color: var(--third-bg-color);
 	background-color: transparent;
-	font-size: 2.5rem;
+	font-size: var(--font-size-xl);
 	vertical-align: middle;
 }
 
@@ -156,4 +158,109 @@ nav {
 
 .form {
 	width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.react-datepicker-popper {
+		position: relative;
+		left: 3rem !important;
+	}
+
+	.custom-input {
+		font-size: var(--font-size-base) !important;
+	}
+
+	.container-selectNav div {
+		font-size: var(--font-size-base);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	nav {
+		width: 100vw;
+		width: 100dvw;
+		height: fit-content;
+		bottom: 0em;
+	}
+
+	#ul-navbar {
+		grid-template-columns: 1fr 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr 0.1fr;
+		height: fit-content;
+		min-height: fit-content;
+	}
+
+	#ul-navbar .li {
+		font-size: var(--font-size-sm);
+		height: fit-content;
+	}
+
+	#ul-navbar > .li:nth-child(2n) {
+		font-size: var(--font-size-md);
+	}
+
+	.custom-input::placeholder {
+		white-space: normal;
+		vertical-align: text-top;
+		text-align: center;
+		word-wrap: break-word;
+	}
+
+	.custom-input {
+		height: fit-content;
+		padding: 0;
+	}
+
+	.react-datepicker-popper {
+		height: 100vh;
+		height: 100dvh;
+		width: 100vw;
+		width: 100dvw;
+		min-width: 100vw;
+		min-height: 100vh;
+		position: fixed !important;
+		padding: 0;
+		border: none !important;
+		border-radius: 0 !important;
+		top: 0 !important;
+		left: 0 !important;
+		right: 0 !important;
+		bottom: 0 !important;
+		transform: none !important;
+		margin: 0 !important;
+		background-color: rgba(0, 0, 0, 0.6) !important;
+		backdrop-filter: blur(5);
+		-webkit-backdrop-filter: blur(5);
+		z-index: 1000 !important;
+		overflow: hidden !important;
+	}
+
+	.custom-calendar {
+		position: absolute !important;
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%) !important;
+		margin: 0 !important;
+		border: none !important;
+		border-radius: 12px !important;
+		width: 100% !important;
+		max-width: fit-content !important;
+		border-radius: 0 !important;
+	}
+
+	.react-datepicker__month-container {
+		float: none;
+		border-radius: 0 !important;
+	}
+
+	.react-datepicker__current-month {
+		font-size: large !important;
+	}
+
+	.react-datepicker__day {
+		font-size: medium;
+	}
+
+	.react-datepicker__day--today {
+		color: var(--secondary-bg-color) !important;
+	}
 }

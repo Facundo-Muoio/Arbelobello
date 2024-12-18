@@ -19,7 +19,7 @@ export default function Ubicacion() {
 	}
 
 	return (
-		<div className="container-ubicaicion" ref={ubicacionRef}>
+		<div className="container-ubicaicion section" ref={ubicacionRef}>
 			{isVisible && dataText ? (
 				<>
 					<div className="container-ubicacion-texts">

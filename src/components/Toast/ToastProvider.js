@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import TodoList from "./ToastList";
 export const ToastContext = createContext();
 
-export default function ToastProvider({ children }) {
+export default function ToastProvider({ children, className }) {
 	const [toasts, setToasts] = useState([]);
 
 	const showToast = toast => {
@@ -16,7 +16,7 @@ export default function ToastProvider({ children }) {
 	return (
 		<ToastContext.Provider value={{ showToast, closeToast }}>
 			{children}
-			<TodoList toasts={toasts} />
+			<TodoList toasts={toasts} className={className} />
 		</ToastContext.Provider>
 	);
 }

@@ -4,11 +4,11 @@ import { ToastContext } from "../Toast/ToastProvider";
 import { MdOutlineErrorOutline } from "react-icons/md";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
-export default function ToastList({ toasts }) {
+export default function ToastList({ toasts, className }) {
 	const { closeToast } = useContext(ToastContext);
 
 	return (
-		<div className="wraper-toasts-list">
+		<div className={`wraper-toasts-list ${className}`}>
 			{toasts.map(({ id, message }) => {
 				return (
 					<div className="toast" key={id}>

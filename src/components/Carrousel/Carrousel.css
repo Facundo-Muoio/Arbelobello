@@ -1,13 +1,13 @@
 .container-carrousel {
 	width: 100vw;
-	height: 100vh;
-	height: 100dvh;
+	height: fit-content;
 	background-color: var(--main-bg-color);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	scroll-snap-align: start;
+	margin-block: 3rem;
 }
 
 .wraper-text-carrousel {
@@ -23,7 +23,7 @@
 	background-color: transparent;
 	color: var(--main-bg-color);
 	width: 100%;
-	font-size: 1.5rem;
+	font-size: var(--font-size-md);
 	text-align: center;
 	padding: 2rem;
 	letter-spacing: 2px;
@@ -92,9 +92,10 @@
 }
 
 .control-container button {
+	font-family: "variableFont";
 	color: var(--main-bg-color);
 	background-color: transparent;
-	font-size: 1rem;
+	font-size: var(--font-size-md);
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -103,10 +104,85 @@
 
 .control-container button svg {
 	background-color: transparent;
-	font-size: 2rem;
+	font-size: var(--font-size-lg);
 }
 
 .control-container .page-counter {
 	background-color: transparent;
 	color: var(--main-bg-color);
+	font-family: "variableFont";
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+	.wraper-text-carrousel p,
+	.wraper-text-carrousel b {
+		font-size: var(--font-size-md);
+	}
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1919px) {
+	.wraper-text-carrousel p,
+	.wraper-text-carrousel b {
+		font-size: var(--font-size-md);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.container-carrousel {
+		justify-content: start;
+		min-height: 100vh;
+		min-height: 100svh;
+		height: 100vh;
+		height: 100svh;
+		margin-bottom: 8rem;
+	}
+
+	.wraper-text-carrousel p {
+		font-size: var(--font-size-base);
+		padding: 0.75em;
+	}
+
+	.wraper-slider {
+		min-height: 85%;
+	}
+
+	.control-container {
+		position: static;
+		justify-content: space-between;
+		width: 100%;
+		min-height: 50px;
+	}
+
+	.page-counter {
+		font-size: var(--font-size-base);
+	}
+
+	.control-container button {
+		position: unset;
+		padding: 0 1em;
+	}
+
+	.slide:first-child img {
+		object-position: center;
+	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+	.wraper-slider {
+		aspect-ratio: 16 / 9;
+		width: 100%;
+		height: fit-content;
+	}
+
+	.container-carrousel {
+		min-height: fit-content;
+		height: fit-content;
+		margin-bottom: 4em;
+	}
+
+	.control-container {
+		justify-content: space-between;
+		width: 100%;
+		height: fit-content;
+	}
 }

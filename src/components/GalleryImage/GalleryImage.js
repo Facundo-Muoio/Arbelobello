@@ -14,11 +14,11 @@ export default function GalleryImage() {
 	const [isOpen, setIsOpen] = useState(false);
 	let images;
 
-	const handleImageClick = image => {
+	const handleImageClick = (url, alt) => {
 		setAnimate(false);
 
 		const newTimeoutId = setTimeout(() => {
-			setMainImage(image);
+			setMainImage({ url, alt });
 			setAnimate(true);
 		}, 10);
 
@@ -57,11 +57,12 @@ export default function GalleryImage() {
 									? "active"
 									: ""
 							}`}
-							onClick={() => handleImageClick(url)}
+							onClick={() => handleImageClick(url, alt)}
 						/>
 					))}
 					<img
-						src={mainImage ? mainImage : images[0][2]}
+						src={mainImage ? mainImage.url : images[0][2]}
+						alt={mainImage ? mainImage.alt : images[0][3]}
 						decoding="async"
 						className={`main-img  ${animate ? "fade" : ""}`}
 					/>
@@ -71,42 +72,12 @@ export default function GalleryImage() {
 					</button>
 				</div>
 				<Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-					<img src={mainImage ? mainImage : images[0][2]} alt="" />
+					<img
+						src={mainImage ? mainImage.url : images[0][2]}
+						alt={mainImage ? mainImage.alt : images[0][3]}
+					/>
 				</Modal>
 			</div>
 		);
 	}
-
-	// return (
-	// 	<div className="contenedor-gallery-image">
-	// 		<div className="box-bg-gallery">
-	// 			{images
-	// 				? images.map(([index, , url, alt]) => {
-	// 						return (
-	// 							<>
-	// 								<img
-	// 									key={index}
-	// 									src={url}
-	// 									alt={alt}
-	// 									className={`thumbnail ${index} `}
-	// 								/>
-	// 								<img
-	// 									key="548"
-	// 									src={mainImage ? mainImage : images[0][2]}
-	// 									className={`main-img`}
-	// 								/>
-	// 							</>
-	// 						);
-	// 				  })
-	// 				: ""}
-	// 			<button className="btn-open-modal" onClick={handleModalOpen}>
-	// 				AMPLIAR
-	// 				<RxArrowRight className="arrow-icon" />
-	// 			</button>
-	// 		</div>
-	// 		{/* <Modal isOpen={isOpen} onClose={handleModalClose}>
-	// 			<img src={mainImage ? mainImage : images[0][2]} alt="" />
-	// 		</Modal> */}
-	// 	</div>
-	// );
 }

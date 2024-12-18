@@ -6,6 +6,7 @@
 	height: 100vh;
 	overflow: hidden;
 	background-color: var(--third-bg-color);
+	animation: changeColor 0.75s linear 2.7s forwards;
 }
 
 .FadeImage {
@@ -20,22 +21,21 @@
 	filter: brightness(0.4);
 }
 
-/* Animación para mover ligeramente la imagen */
 @keyframes fadeInOut {
 	0% {
 		opacity: 0;
-		transform: scale(1.15); /* Leve zoom in inicial */
+		transform: scale(1.15);
 	}
 	5% {
-		opacity: 1; /* Fade in rápido */ /* Zoom normal */
+		opacity: 1;
 	}
 	25% {
-		opacity: 1; /* Imagen totalmente visible */
+		opacity: 1;
 		transform: scale(1);
 	}
 
 	100% {
 		opacity: 1;
-		transform: scale(1); /* Reestablece para el próximo ciclo */
+		transform: scale(1);
 	}
 }

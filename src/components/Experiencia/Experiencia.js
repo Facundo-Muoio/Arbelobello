@@ -22,7 +22,7 @@ export default function Experiencia() {
 	}
 
 	return (
-		<div className="container-experience" ref={contentRef}>
+		<div className="container-experience section" ref={contentRef}>
 			{contentIsVisible && (
 				<>
 					<div className="experiencie-images-container">

@@ -13,7 +13,7 @@
 	--fourth-bg-color: #3d1808;
 
 	--font-size-sm: clamp(0.8rem, 0.05vi + 0.79rem, 0.84rem);
-	--font-size-base: clamp(1rem, 0.13vi + 0.97rem, 1.13rem);
+	--font-size-base: clamp(1rem, 0.13vi + 0.97rem, 1.25rem);
 	--font-size-md: clamp(1.25rem, 0.26vi + 1.18rem, 1.5rem);
 	--font-size-lg: clamp(1.56rem, 0.46vi + 1.45rem, 2rem);
 	--font-size-xl: clamp(1.95rem, 0.75vi + 1.77rem, 2.66rem);
@@ -26,6 +26,7 @@
 	src: url("./fonts/ciabatta-9.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -33,18 +34,21 @@
 	src: url("./fonts/Archivo-VariableFont_wdth,wght.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "variableFontBold";
 	src: url("./fonts/Archivo-Bold.ttf") format("truetype");
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: "variableFontThing";
 	src: url("./fonts/Archivo-Thin.ttf") format("truetype");
 	font-style: normal;
+	font-display: swap;
 }
 
 .italic {
@@ -57,11 +61,10 @@ html body {
 	height: 100vh;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	scrollbar-width: thin; /* Opciones: auto, thin o none */
-	scrollbar-color: transparent var(--opinions-bg-color);
-	scroll-snap-type: y mandatory;
-	/* scroll-behavior: smooth; */
-	/* Color del thumb y del track */
+}
+
+ul li {
+	list-style: none;
 }
 
 @keyframes fadeIn {
@@ -107,9 +110,15 @@ html body {
 	}
 }
 
+@keyframes changeColor {
+	to {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
 ::-webkit-scrollbar {
-	width: 0.6rem; /* Para scroll vertical */
-	height: 0.6rem; /* Para scroll horizontal */
+	width: 0.5rem; /* Para scroll vertical */
+	height: 0.5rem; /* Para scroll horizontal */
 }
 
 /* Estilo del fondo del scrollbar */
@@ -127,5 +136,16 @@ html body {
 
 /* Cambia el color del thumb al hacer hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--third-bg-color); /* Color al pasar el mouse */
+	background: var(--opinions-bg-color); /* Color al pasar el mouse */
 }
+/* 
+@media screen and (max-width: 767px) {
+	body {
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+	}
+
+	body .section {
+		scroll-snap-align: start;
+	}
+} */

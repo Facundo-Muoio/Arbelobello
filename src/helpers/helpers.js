@@ -76,14 +76,25 @@ function validateRegex(name, value, setError, removeError) {
 function formatedDate(date) {
 	const fecha = new Date(date);
 
-	// Extraer el año, mes y día
 	const year = fecha.getFullYear();
-	const mes = String(fecha.getMonth() + 1).padStart(2, "0"); // Sumar 1 al mes y agregar un cero al principio si es menor a 10
-	const dia = String(fecha.getDate()).padStart(2, "0"); // Agregar un cero al principio si el día es menor a 10
+	const mes = String(fecha.getMonth() + 1).padStart(2, "0");
+	const dia = String(fecha.getDate()).padStart(2, "0");
 
-	// Formatear la fecha en el formato YYYY-MM-DD
 	const fechaFormateada = `${year}-${mes}-${dia}`;
 	return fechaFormateada;
 }
 
-export { fetcher, createObserver, parseTextToJSX, validateRegex, formatedDate };
+function generateUniqueId() {
+	const timestamp = Date.now();
+	const randomNumber = Math.floor(Math.random() * 100000);
+	return `${timestamp}-${randomNumber}`;
+}
+
+export {
+	fetcher,
+	createObserver,
+	parseTextToJSX,
+	validateRegex,
+	formatedDate,
+	generateUniqueId,
+};

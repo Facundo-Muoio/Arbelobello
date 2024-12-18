@@ -17,8 +17,8 @@ export default function Form({
 	return (
 		<form
 			className="form"
-			onSubmit={event => {
-				handlerSubmit(event, errors);
+			onSubmit={async event => {
+				await handlerSubmit(event, errors);
 				setFields({});
 			}}
 		>

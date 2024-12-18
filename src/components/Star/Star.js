@@ -18,11 +18,11 @@ export default function Star({ rating }) {
 
 	return (
 		<div className="container-opinions-stars">
-			{arrStars.map(star =>
+			{arrStars.map((star, id) =>
 				star === "fill" ? (
-					<AiFillStar className={star} key={crypto.randomUUID()} />
+					<AiFillStar className={star} key={id} />
 				) : (
-					<AiOutlineStar className={star} key={crypto.randomUUID()} />
+					<AiOutlineStar className={star} key={id} />
 				)
 			)}
 		</div>

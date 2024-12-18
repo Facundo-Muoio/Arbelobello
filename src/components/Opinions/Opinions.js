@@ -20,20 +20,20 @@ export default function Opinions() {
 	}
 
 	return (
-		<div className="container-opinions" ref={opinionsRef}>
+		<div className="container-opinions section" ref={opinionsRef}>
 			{data && isVisible && (
 				<>
 					<div className="container-opinions-text">
 						<h1>Ya disfrutaron</h1>
 						<p>Alberobello Casa Serrana</p>
 					</div>
-					<div class="wraper-slider-cards">
+					<div className="wraper-slider-cards">
 						<div className="slider-cards" ref={sliderRef}>
-							{opinions.map(([fullName, userImage, rating, opinion]) => (
-								<div className="card-opinion" key={crypto.randomUUID()}>
+							{opinions.map(([fullName, userImage, rating, opinion], id) => (
+								<div className="card-opinion" key={id}>
 									<div>
 										<strong>“”</strong>
-										<img src={userImage} alt="" />
+										<img src={userImage} alt="imagen de perfil" />
 										<h4>{fullName}</h4>
 									</div>
 									<p>{opinion}</p>

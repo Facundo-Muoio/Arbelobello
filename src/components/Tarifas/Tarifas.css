@@ -86,7 +86,7 @@
 	}
 
 	.wraper-tarifa:first-child {
-		border-right: none;
+		border-right: none !important;
 		border-bottom: 2px solid var(--third-bg-color);
 		padding: 2rem;
 	}
@@ -96,26 +96,76 @@
 	}
 
 	.wraper-tarifa h2 {
-		font-size: 1.5rem;
+		font-size: var(--font-size-md);
 	}
 
 	.wraper-tarifa p {
-		font-size: 1rem;
+		font-size: var(--font-size-base);
 	}
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
 	.wraper-tarifa h2 {
-		font-size: 1.75rem;
+		font-size: var(--font-size-md);
 	}
 
 	.wraper-tarifa p {
-		font-size: 1.25rem;
+		font-size: var(--font-size-base);
 	}
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1929px) {
 	.container-tarifas {
 		height: 45vh;
+	}
+
+	.wraper-tarifa h2 {
+		font-size: var(--font-size-lg);
+	}
+
+	.wraper-tarifa p {
+		font-size: var(--font-size-md);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.wraper-tarifa h2 {
+		font-size: var(--font-size-base);
+		line-height: 2rem;
+		margin-bottom: 0.5em;
+	}
+
+	.wraper-tarifa p {
+		font-size: var(--font-size-sm);
+		line-height: 2rem;
+		margin-bottom: 0.5em;
+	}
+
+	.container-tarifas {
+		padding: 2em;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.wraper-tarifa {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.wraper-tarifa:first-child {
+		border-right: none !important;
+		border-bottom: solid 1px var(--third-bg-color);
+		margin-bottom: 1em;
+	}
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+	.wraper-tarifa {
+		width: 70%;
 	}
 }

@@ -9,16 +9,17 @@ export default function ButtonCards({ sliderRef, opinions }) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const width = window.innerWidth;
-	const numberCardsVisibles = width >= 768 && width <= 1024 ? 2 : 3;
+	const numberCardsVisibles =
+		width < 768 ? 1 : width >= 768 && width <= 1024 ? 2 : 3;
 	const pages = opinions.length - numberCardsVisibles + 1;
 	const firstIndex = currentIndex === 0;
 	const lastIndex = currentIndex === opinions.length - numberCardsVisibles;
 
 	const scrollLeft = () => {
 		if (!firstIndex) {
-			setCurrentIndex(currentIndex - 1);
+			setCurrentIndex(prevIndex => prevIndex - 1);
 			sliderRef.current.scrollBy({
-				left: -300,
+				left: sliderRef.current.firstChild.clientWidth * -1,
 				behavior: "smooth",
 			});
 		}
@@ -26,9 +27,9 @@ export default function ButtonCards({ sliderRef, opinions }) {
 
 	const scrollRight = () => {
 		if (!lastIndex) {
-			setCurrentIndex(currentIndex + 1);
+			setCurrentIndex(prevIndex => prevIndex + 1);
 			sliderRef.current.scrollBy({
-				left: 300,
+				left: sliderRef.current.firstChild.clientWidth,
 				behavior: "smooth",
 			});
 		}

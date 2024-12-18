@@ -22,17 +22,63 @@ export default function Carrousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isVisible, setIsVisible] = useState(false);
 	const carrouselObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const windowWidth = window.innerWidth;
 	let images;
 	let texts;
+
+	const CarrouselHTML = () => {
+		if (data && dataText) {
+			texts = dataText.values.filter(text => text[0] === "carousel");
+			images = data.values.slice(2);
+			return (
+				<>
+					<div className="wraper-text-carrousel">
+						<p>{parseTextToJSX(texts[0][2])}</p>
+					</div>
+					<Slider style={{ transform: `translateX(${-100 * currentIndex}%)` }}>
+						{images.map(([id, , src, alt]) => (
+							<Slide key={id}>
+								<img src={src} alt={alt} />
+							</Slide>
+						))}
+						{windowWidth < 767 ? null : Controls(images)}
+					</Slider>
+				</>
+			);
+		}
+	};
+
+	const Controls = images => {
+		if (data) {
+			return (
+				<Control>
+					<button ref={nextBtnRef} onClick={() => handlerPrevBtn(prevBtnRef)}>
+						<HiOutlineArrowSmallLeft />
+					</button>
+					<div className="page-counter">
+						{currentIndex + 1 < 10
+							? "0" + (currentIndex + 1)
+							: currentIndex + 1}{" "}
+						/ {images.length < 10 ? "0" + images.length : images.length}
+					</div>
+					<button ref={prevBtnRef} onClick={() => handlerNextBtn(nextBtnRef)}>
+						<HiOutlineArrowSmallRight />
+					</button>
+				</Control>
+			);
+		}
+	};
 
 	const handlerPrevBtn = ref => {
 		const sliderWidth = ref.current.parentElement.parentElement.offsetWidth;
 		const controlContainer = ref.current.parentElement;
 		if (currentIndex >= 1) {
 			setCurrentIndex(prev => prev - 1);
-			controlContainer.style.transform = `translateX(${
-				sliderWidth * (currentIndex - 1)
-			}px)`;
+			windowWidth > 767
+				? (controlContainer.style.transform = `translateX(${
+						sliderWidth * (currentIndex - 1)
+				  }px)`)
+				: "";
 		}
 	};
 
@@ -40,65 +86,23 @@ export default function Carrousel() {
 		const sliderWidth = ref.current.parentElement.parentElement.offsetWidth;
 		const controlContainer = ref.current.parentElement;
 		if (currentIndex < data.values.slice(2).length - 1) {
-			setCurrentIndex(prev => {
-				controlContainer.style.transform = `translateX(${
-					sliderWidth * (currentIndex + 1)
-				}px)`;
-				return prev + 1;
-			});
+			setCurrentIndex(prev => prev + 1);
+			windowWidth > 767
+				? (controlContainer.style.transform = `translateX(${
+						sliderWidth * (currentIndex + 1)
+				  }px)`)
+				: "";
 		}
 	};
 
 	useAnimation(carrouselObserver, carrouselRef);
 
 	return (
-		<div className="container-carrousel" ref={carrouselRef}>
-			{isVisible &&
-				(data && dataText
-					? ((images = data.values.slice(2)),
-					  (texts = dataText.values.filter(text => text[0] === "carousel")),
-					  (
-							<>
-								<div className="wraper-text-carrousel">
-									<p>{parseTextToJSX(texts[0][2])}</p>
-								</div>
-								<Slider
-									style={{ transform: `translateX(${-100 * currentIndex}%)` }}
-								>
-									{images.map(([id, , src, alt]) => (
-										<Slide key={id}>
-											<img
-												src={src}
-												alt={alt}
-												// style={{ transform: ` translateX(-${100 * id}%)` }}
-											/>
-										</Slide>
-									))}
-									<Control>
-										<button
-											ref={nextBtnRef}
-											onClick={() => handlerPrevBtn(prevBtnRef)}
-										>
-											<HiOutlineArrowSmallLeft />
-										</button>
-										<div className="page-counter">
-											{currentIndex + 1 < 10
-												? "0" + (currentIndex + 1)
-												: currentIndex + 1}{" "}
-											/{" "}
-											{images.length < 10 ? "0" + images.length : images.length}
-										</div>
-										<button
-											ref={prevBtnRef}
-											onClick={() => handlerNextBtn(nextBtnRef)}
-										>
-											<HiOutlineArrowSmallRight />
-										</button>
-									</Control>
-								</Slider>
-							</>
-					  ))
-					: "")}
+		<div className="container-carrousel section" ref={carrouselRef}>
+			{isVisible && CarrouselHTML()}
+			{data && windowWidth < 767
+				? isVisible && Controls(data.values.slice(2))
+				: null}
 		</div>
 	);
 }

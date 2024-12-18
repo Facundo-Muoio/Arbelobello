@@ -43,7 +43,14 @@ export default function FormProvider({
 
 	return (
 		<FormContext.Provider
-			value={{ fields, setFields, errors, handleChange, validateField }}
+			value={{
+				fields,
+				setFields,
+				errors,
+				setError,
+				handleChange,
+				validateField,
+			}}
 		>
 			<Form
 				handlerSubmit={handlerSubmit}

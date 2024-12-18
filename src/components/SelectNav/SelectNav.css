@@ -1,3 +1,7 @@
+.no-scroll {
+	overflow: hidden;
+}
+
 .container-selectNav {
 	position: relative;
 }
@@ -44,4 +48,36 @@
 	text-transform: capitalize;
 	font-size: 0.75em !important;
 	cursor: none;
+}
+
+@media screen and (max-width: 767px) {
+	.container-selectNav ul {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		left: 0;
+		top: 0;
+		border-radius: 0px;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(5);
+		gap: 0;
+		padding: 0;
+		z-index: 10;
+	}
+
+	.container-selectNav ul li {
+		font-size: var(--font-size-md) !important;
+		background-color: var(--third-bg-color);
+		width: 200px;
+		padding: 0.25em;
+		z-index: 100;
+	}
+
+	.container-selectNav ul li:last-child {
+		font-size: var(--font-size-md) !important;
+		margin-bottom: 0;
+		padding-top: 0.25em;
+	}
 }

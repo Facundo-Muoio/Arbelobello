@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { generateUniqueId } from "../../helpers/helpers";
 import "./SelectNav.css";
 
 export default function SelectNav({
@@ -29,7 +30,7 @@ export default function SelectNav({
 		if (label === "ADULTOS") {
 			const num = 6 - capacidad["NIÑOS"];
 			if (newValue > num) {
-				const id = crypto.randomUUID();
+				const id = generateUniqueId();
 				showToast({ id, message });
 				setIsVisible(false);
 				return;
@@ -38,19 +39,25 @@ export default function SelectNav({
 		if (label === "NIÑOS") {
 			const num = 6 - capacidad["ADULTOS"];
 			if (newValue > num) {
-				const id = crypto.randomUUID();
+				const id = generateUniqueId();
 				showToast({ id, message });
 				setIsVisible(false);
 				return;
 			}
 		}
+		document.querySelector("body").classList.remove("no-scroll");
 		setIsVisible(false);
 		setCapacidad(prevCapacidad => ({ ...prevCapacidad, [label]: newValue }));
 	};
 
+	const handleClick = () => {
+		document.querySelector("body").classList.add("no-scroll");
+		setIsVisible(!isVisible);
+	};
+
 	return (
 		<div className="container-selectNav">
-			<div className="selectNav" onClick={() => setIsVisible(!isVisible)}>
+			<div className="selectNav" onClick={handleClick}>
 				{capacidad[label] ? capacidad[label] : label}
 			</div>
 			{isVisible && (

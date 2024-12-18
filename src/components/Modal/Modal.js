@@ -34,7 +34,7 @@ export default function Modal({ isOpen, setIsOpen, children, className }) {
 			document.removeEventListener("mousedown", handleClickOutside);
 			document.removeEventListener("keydown", handleKeyDown);
 		};
-	}, [isOpen]);
+	}, [isOpen, setIsOpen]);
 
 	return (
 		<dialog
