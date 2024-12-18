@@ -1,5 +1,6 @@
 .container-carrousel {
 	width: 100vw;
+	min-height: 100vh;
 	height: fit-content;
 	background-color: var(--main-bg-color);
 	display: flex;

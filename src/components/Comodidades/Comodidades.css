@@ -66,7 +66,7 @@
 .container-comodidades .item p {
 	color: var(--main-bg-color);
 	font-family: "variableFontThing";
-	width: 50%;
+	width: 55%;
 	opacity: 0;
 	filter: blur(20);
 	transform: translateX(100px);
