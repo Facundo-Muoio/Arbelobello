@@ -52,7 +52,7 @@ export default function Carrousel() {
 		if (data) {
 			return (
 				<Control>
-					<button ref={nextBtnRef} onClick={() => handlerPrevBtn(prevBtnRef)}>
+					<button ref={prevBtnRef} onClick={() => handlerPrevBtn(prevBtnRef)}>
 						<HiOutlineArrowSmallLeft />
 					</button>
 					<div className="page-counter">
@@ -61,7 +61,7 @@ export default function Carrousel() {
 							: currentIndex + 1}{" "}
 						/ {images.length < 10 ? "0" + images.length : images.length}
 					</div>
-					<button ref={prevBtnRef} onClick={() => handlerNextBtn(nextBtnRef)}>
+					<button ref={nextBtnRef} onClick={() => handlerNextBtn(nextBtnRef)}>
 						<HiOutlineArrowSmallRight />
 					</button>
 				</Control>
@@ -71,6 +71,7 @@ export default function Carrousel() {
 
 	const handlerPrevBtn = ref => {
 		const sliderWidth = ref.current.parentElement.parentElement.offsetWidth;
+		console.log(sliderWidth);
 		const controlContainer = ref.current.parentElement;
 		if (currentIndex >= 1) {
 			setCurrentIndex(prev => prev - 1);
@@ -84,6 +85,7 @@ export default function Carrousel() {
 
 	const handlerNextBtn = ref => {
 		const sliderWidth = ref.current.parentElement.parentElement.offsetWidth;
+		console.log(sliderWidth);
 		const controlContainer = ref.current.parentElement;
 		if (currentIndex < data.values.slice(2).length - 1) {
 			setCurrentIndex(prev => prev + 1);

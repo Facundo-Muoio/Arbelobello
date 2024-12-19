@@ -128,7 +128,9 @@ export default function Navbar() {
 						onChange={date => handlerCheckIn(date, "navbar")}
 						className="custom-input"
 						calendarClassName="custom-calendar"
-						placeholderText="CHECK IN"
+						placeholderText={
+							window.innerWidth > 768 ? "CHECK IN" : "CHECK \n IN"
+						}
 					/>
 				</div>
 				<div className="li">/</div>
@@ -141,7 +143,7 @@ export default function Navbar() {
 						className="custom-input"
 						calendarClassName="custom-calendar"
 						placeholderText={
-							window.innerWidth > 768 ? "CHECK OUT" : "CHECK \nOUT"
+							window.innerWidth > 768 ? "CHECK OUT" : `CHECK \n OUT`
 						}
 					/>
 				</div>

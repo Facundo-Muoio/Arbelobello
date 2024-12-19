@@ -179,19 +179,16 @@ nav {
 	nav {
 		width: 100vw;
 		width: 100dvw;
-		height: fit-content;
 		bottom: 0em;
 	}
 
 	#ul-navbar {
 		grid-template-columns: 1fr 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr 0.1fr;
-		height: fit-content;
 		min-height: fit-content;
 	}
 
 	#ul-navbar .li {
 		font-size: var(--font-size-sm);
-		height: fit-content;
 	}
 
 	#ul-navbar > .li:nth-child(2n) {

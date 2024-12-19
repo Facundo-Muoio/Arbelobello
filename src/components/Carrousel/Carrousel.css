@@ -9,6 +9,7 @@
 	align-items: center;
 	scroll-snap-align: start;
 	margin-block: 3rem;
+	padding-top: 3rem;
 }
 
 .wraper-text-carrousel {
@@ -172,6 +173,7 @@
 	.wraper-slider {
 		aspect-ratio: 16 / 9;
 		width: 100%;
+		min-height: 85%;
 		height: fit-content;
 	}
 
