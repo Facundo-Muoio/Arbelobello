@@ -36,6 +36,8 @@ export default function Header() {
 							src={LogoSierraAlta}
 							alt="logo Arbelo Bello"
 							loading="lazy"
+							width={"370"}
+							height={"17"}
 						/>
 						<div className="mask mask-logo_sierraAlta"></div>
 					</div>
@@ -45,6 +47,8 @@ export default function Header() {
 							src={LogoSierraBaja}
 							alt="logo Arbelo Bello"
 							loading="lazy"
+							width={"370"}
+							height={"17"}
 						/>
 						<div className="mask mask-logo_sierraBaja"></div>
 					</div>

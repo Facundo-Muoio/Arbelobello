@@ -50,6 +50,16 @@
 		left: 0;
 		top: 20%;
 		max-width: 100vw;
+		min-width: 100vw;
 		width: 100vw;
+		font-size: var(--font-size-sm);
+	}
+
+	.btn-toast-close {
+		font-size: 1.2rem;
+	}
+
+	.icon-toast {
+		font-size: 1.2rem;
 	}
 }
