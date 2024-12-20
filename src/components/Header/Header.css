@@ -145,7 +145,7 @@ header {
 	background-color: transparent;
 	object-fit: cover;
 	position: absolute;
-	bottom: -17%;
+	bottom: -12%;
 }
 
 @keyframes fade-in-bottom {
@@ -156,6 +156,20 @@ header {
 	100% {
 		transform: translateY(0);
 		opacity: 1;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.path {
+		bottom: -5%;
+	}
+
+	#container-logo_sierraBaja {
+		max-width: 300px;
+	}
+
+	#container-logo_sierraAlta {
+		max-width: 81px;
 	}
 }
 
@@ -208,3 +222,9 @@ header {
 		bottom: -14%;
 	}
 }
+
+/* @media (min-height: 900px) {
+	.path {
+		background-color: red;
+	}
+} */

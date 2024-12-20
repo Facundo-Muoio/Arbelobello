@@ -83,11 +83,10 @@ section {
 	}
 
 	#introducción {
-		height: min-content;
-	}
-
-	.contenedor-intro {
-		width: 100%;
+		min-height: fit-content;
+		height: fit-content;
+		grid-template-rows: repeat(2, auto);
+		gap: 3rem;
 	}
 
 	#introducción h1 {
