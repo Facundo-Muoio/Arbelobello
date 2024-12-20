@@ -93,3 +93,11 @@
 	background-color: var(--third-bg-color);
 	padding: 0 0.5em;
 }
+
+@media screen and (max-width: 768) {
+	.container-email-form .close-btn {
+		position: absolute;
+		top: 0.25em;
+		right: 0.25em;
+	}
+}
