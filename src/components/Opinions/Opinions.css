@@ -436,7 +436,7 @@
 	}
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 	.container-opinions-text h1 {
 		font-size: var(--font-size-xxl);
 	}
@@ -491,7 +491,7 @@
 	}
 }
 
-@media screen and (max-width: 767px) and (orientation: landscape) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
 	.container-opinions {
 		width: 100%;
 		min-height: 160vh;

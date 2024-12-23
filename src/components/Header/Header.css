@@ -217,14 +217,8 @@ header {
 	}
 }
 
-@media screen and (max-width: 767px) and (orientation: landscape) {
+@media screen and (max-width: 768px) and (orientation: landscape) {
 	.path {
 		bottom: -14%;
 	}
 }
-
-/* @media (min-height: 900px) {
-	.path {
-		background-color: red;
-	}
-} */

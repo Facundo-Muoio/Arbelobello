@@ -45,7 +45,7 @@
 	font-size: 1.25rem;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 	.wraper-toasts-list {
 		left: 0;
 		top: 20%;
