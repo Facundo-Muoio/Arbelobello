@@ -339,7 +339,7 @@ img.medium-image {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.container-experience {
 		display: flex;
 		flex-direction: column;
@@ -406,7 +406,7 @@ img.medium-image {
 	}
 }
 
-@media screen and (max-width: 768px) and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
 	.container-experience {
 		margin: 4em 0;
 		width: 100%;

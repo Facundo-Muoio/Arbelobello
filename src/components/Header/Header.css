@@ -179,7 +179,7 @@ header {
 	}
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 900px) {
 	header {
 		height: 100svh;
 	}
@@ -217,7 +217,7 @@ header {
 	}
 }
 
-@media screen and (max-width: 768px) and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
 	.path {
 		bottom: -14%;
 	}

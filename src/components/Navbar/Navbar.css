@@ -175,7 +175,7 @@ nav {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	nav {
 		width: 100vw;
 		width: 100dvw;

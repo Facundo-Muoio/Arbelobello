@@ -44,7 +44,7 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.container-opinions-stars .fill {
 		font-size: var(--font-size-xxl);
 	}

@@ -128,7 +128,7 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.wraper-tarifa h2 {
 		font-size: var(--font-size-base);
 		line-height: 2rem;
@@ -164,7 +164,7 @@
 	}
 }
 
-@media screen and (max-width: 768px) and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
 	.wraper-tarifa {
 		width: 70%;
 	}
