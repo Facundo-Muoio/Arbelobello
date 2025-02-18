@@ -4,12 +4,32 @@ import PathSierra from "../../images/pathSierras.png";
 import Navbar from "../Navbar/Navbar.js";
 import FadeImage from "../FadeImage/FadeImage.js";
 import ToastProvider from "../Toast/ToastProvider.js";
-import { useFetch } from "../../hooks/hooks.js";
+import { useRef, useState, useContext } from "react";
+import { useAnimation, useFetch } from "../../hooks/hooks.js";
 import "dotenv/config";
 import "./Header.css";
+import { createObserver } from "../../helpers/helpers.js";
+import { FloatingWpContext } from "../../Contexts/Context.js";
+import SplitingVideo from "../SplitingVideo/SplitingVideo.js";
 
 export default function Header() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/HEADER?key=${process.env.API_KEY}`;
+	const [isVisible, setIsVisible] = useState();
+	const headerRef = useRef();
+	const { setFloatingWhatsappVisibility } = useContext(FloatingWpContext);
+	const headerObserver = createObserver(
+		setIsVisible,
+		{ threshold: 0.9 },
+		setFloatingWhatsappVisibility,
+		{ setOnFalse: true }
+	);
+	let video;
+
+	useAnimation(headerObserver, headerRef);
+
+	if (isVisible) {
+		console.log("el header es visible");
+	}
 
 	const { data, error, isLoading } = useFetch(url);
 
@@ -22,14 +42,21 @@ export default function Header() {
 		return <div className="background-loading "></div>;
 	}
 
+	if (data) {
+		videos = data.values.slice(2);
+		console.log(videos);
+	}
+
 	if (data)
 		return (
 			<>
 				<div className="background">
-					<FadeImage images={data.values.slice(2, 3)} />
-					<FadeImage images={data.values.slice(3)} />
+					{/* <FadeImage images={data.values.slice(2, 3)} />
+					<FadeImage images={data.values.slice(3)} /> */}
+					<SplitingVideo sourceVideo={videos[0][2]} side="left" />
+					<SplitingVideo sourceVideo={videos[1][2]} side="right" />
 				</div>
-				<header>
+				<header ref={headerRef}>
 					<div id="container-logo_sierraAlta">
 						<img
 							className="logo sierra_alta"

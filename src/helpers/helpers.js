@@ -12,13 +12,24 @@ const fetcher = async url => {
 
 const createObserver = (
 	setFunction,
-	{ root = null, marginRoot = "0px 0px 0px 0px", threshold = 0 }
+	{ root = null, marginRoot = "0px 0px 0px 0px", threshold = 0 },
+	setSecondaryFunction = null,
+	setOnFalse = null
 ) => {
 	const observer = new IntersectionObserver(
 		entries => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					setFunction(true);
+					if (setSecondaryFunction) {
+						if (setOnFalse) {
+							console.log("entre");
+							setSecondaryFunction(false);
+						} else {
+							console.log("no entre");
+							setSecondaryFunction(true);
+						}
+					}
 				}
 			});
 		},

@@ -27,7 +27,7 @@ const useAnimation = (observer, elementRef) => {
 				observer.unobserve(elementRef.current);
 			}
 		};
-	}, []);
+	}, [observer, elementRef]);
 };
 
 export { useFetch, useAnimation };

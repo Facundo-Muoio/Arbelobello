@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./GalleryImage.css";
 import { useFetch } from "../../hooks/hooks";
 import Modal from "../Modal/Modal";
@@ -8,32 +8,33 @@ export default function GalleryImage() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/GALERIA?key=${process.env.API_KEY}`;
 
 	const { data } = useFetch(url);
-	const [mainImage, setMainImage] = useState();
-	const [animate, setAnimate] = useState(false);
-	const [timeoutId, setTimeoutId] = useState(null);
 	const [isOpen, setIsOpen] = useState(false);
+	const [activeImage, setActiveImage] = useState(1);
+	const mainImgRef = useRef(null);
 	let images;
-
-	const handleImageClick = (url, alt) => {
-		setAnimate(false);
-
-		const newTimeoutId = setTimeout(() => {
-			setMainImage({ url, alt });
-			setAnimate(true);
-		}, 10);
-
-		setTimeoutId(newTimeoutId);
-	};
 
 	const handleModalOpen = () => {
 		setIsOpen(true);
 	};
 
+	const handleImageClick = index => {
+		setActiveImage(Number(index));
+	};
+
 	useEffect(() => {
-		return () => {
-			if (timeoutId) clearTimeout(timeoutId);
-		};
-	}, [timeoutId]);
+		let GalleryImageTimeOut;
+		if (!isOpen) {
+			GalleryImageTimeOut = setTimeout(() => {
+				mainImgRef.current ? mainImgRef.current.classList.remove("fade") : "";
+				setTimeout(() => {
+					setActiveImage(prev => (prev === 4 ? 1 : prev + 1));
+					mainImgRef.current ? mainImgRef.current.classList.add("fade") : "";
+				}, 10);
+			}, 3000);
+		}
+
+		return () => clearTimeout(GalleryImageTimeOut);
+	}, [isOpen, activeImage]);
 
 	if (data) {
 		images = data.values.slice(2);
@@ -51,20 +52,17 @@ export default function GalleryImage() {
 							loading="lazy"
 							decoding="async"
 							className={`thumbnail ${index} ${
-								!mainImage && index == "1"
-									? "active"
-									: url === mainImage
-									? "active"
-									: ""
+								Number(index) === activeImage ? "active" : ""
 							}`}
-							onClick={() => handleImageClick(url, alt)}
+							onClick={() => handleImageClick(index)}
 						/>
 					))}
 					<img
-						src={mainImage ? mainImage.url : images[0][2]}
-						alt={mainImage ? mainImage.alt : images[0][3]}
+						src={images[activeImage - 1][2]}
+						alt={images[activeImage - 1][3]}
 						decoding="async"
-						className={`main-img  ${animate ? "fade" : ""}`}
+						className="main-img"
+						ref={mainImgRef}
 					/>
 					<button className="btn-open-modal" onClick={handleModalOpen}>
 						AMPLIAR
@@ -73,8 +71,8 @@ export default function GalleryImage() {
 				</div>
 				<Modal isOpen={isOpen} setIsOpen={setIsOpen}>
 					<img
-						src={mainImage ? mainImage.url : images[0][2]}
-						alt={mainImage ? mainImage.alt : images[0][3]}
+						src={images[activeImage - 1][2]}
+						alt={images[activeImage - 1][3]}
 					/>
 				</Modal>
 			</div>

@@ -8,22 +8,27 @@ import Comodidades from "./components/Comodidades/Comodidades.js";
 import Ubicacion from "./components/Ubicacion/Ubicacion.js";
 import Opinions from "./components/Opinions/Opinions.js";
 import Tarifas from "./components/Tarifas/Tarifas.js";
+import FloatingWhatsapp from "./components/FloatingWhatsapp/FloatingWhatsapp.js";
 import Footer from "./components/Footer/Footer.js";
+import FloatingWhatsappProvider from "./Contexts/Context.js";
 
 export default function App() {
 	return (
 		<>
-			<Header />
-			<main>
-				<Introduccion />
-				<Carrousel />
-				<Experiencia />
-				<Comodidades />
-				<Ubicacion />
-				<Opinions />
-				<Tarifas />
-			</main>
-			<Footer />
+			<FloatingWhatsappProvider>
+				<Header />
+				<main>
+					<Introduccion />
+					<Comodidades />
+					<Experiencia />
+					<Carrousel />
+					<Ubicacion />
+					<Opinions />
+					<Tarifas />
+					<FloatingWhatsapp />
+				</main>
+				<Footer />
+			</FloatingWhatsappProvider>
 		</>
 	);
 }

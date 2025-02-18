@@ -1,9 +1,10 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 import "./Opinions.css";
 import { useAnimation, useFetch } from "../../hooks/hooks";
 import { createObserver } from "../../helpers/helpers";
 import Star from "../Star/Star";
 import ButtonCards from "../ButtonCards/ButtonCards";
+import { FloatingWpContext } from "../../Contexts/Context";
 
 export default function Opinions() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/OPINIONES?key=${process.env.API_KEY}`;
@@ -11,7 +12,12 @@ export default function Opinions() {
 	const [isVisible, setIsVisible] = useState();
 	const opinionsRef = useRef();
 	const sliderRef = useRef(null);
-	const opinionsObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const { setFloatingWhatsappVisibility } = useContext(FloatingWpContext);
+	const opinionsObserver = createObserver(
+		setIsVisible,
+		{ threshold: 0.5 },
+		setFloatingWhatsappVisibility
+	);
 	useAnimation(opinionsObserver, opinionsRef);
 	let opinions;
 

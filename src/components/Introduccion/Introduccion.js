@@ -1,23 +1,28 @@
 import "./Introduccion.css";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import GalleryImage from "../GalleryImage/GalleryImage.js";
 import { createObserver, parseTextToJSX } from "../../helpers/helpers.js";
 import { useFetch } from "../../hooks/hooks.js";
+import { FloatingWpContext } from "../../Contexts/Context.js";
 
 export default function Introduccion() {
 	const sectionRef = useRef(null);
-
 	const [textVisibility, setTextVisibility] = useState(false);
 	const [galleryVisibility, setGalleryVisibility] = useState(false);
+	const { setFloatingWhatsappVisibility } = useContext(FloatingWpContext);
 	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
 	const { data: dataText } = useFetch(urlText);
 	let texts;
 
 	useEffect(() => {
-		const observerText = createObserver(setTextVisibility, { threshold: 0.8 });
-		const observerGallery = createObserver(setGalleryVisibility, {
-			threshold: 0.9,
-		});
+		const observerText = createObserver(setTextVisibility, { threshold: 0.2 });
+		const observerGallery = createObserver(
+			setGalleryVisibility,
+			{
+				threshold: 0.7,
+			},
+			setFloatingWhatsappVisibility
+		);
 
 		if (sectionRef.current) {
 			observerText.observe(sectionRef.current);

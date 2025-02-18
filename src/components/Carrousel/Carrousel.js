@@ -11,7 +11,7 @@ import { useState, useRef } from "react";
 import { createObserver, parseTextToJSX } from "../../helpers/helpers.js";
 
 export default function Carrousel() {
-	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/CAROUSEL?key=${process.env.API_KEY}`;
+	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/CARRUSEL?key=${process.env.API_KEY}`;
 	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
 
 	const { data } = useFetch(url);
@@ -21,14 +21,14 @@ export default function Carrousel() {
 	const carrouselRef = useRef(null);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isVisible, setIsVisible] = useState(false);
-	const carrouselObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const carrouselObserver = createObserver(setIsVisible, { threshold: 0.3 });
 	const windowWidth = window.innerWidth;
 	let images;
 	let texts;
 
 	const CarrouselHTML = () => {
 		if (data && dataText) {
-			texts = dataText.values.filter(text => text[0] === "carousel");
+			texts = dataText.values.filter(text => text[0] === "carrusel");
 			images = data.values.slice(2);
 			return (
 				<>

@@ -1,0 +1,41 @@
+.floatingWhatsapp {
+	position: fixed; /* Lo mantiene fijo en el viewport */
+	bottom: 2rem; /* Distancia desde la parte inferior */
+	right: 2rem; /* Distancia desde la parte derecha */
+	width: fit-content; /* Tamaño del icono */
+	height: auto;
+	border: 1px solid #25d366;
+	background-color: #25d366; /* Color de WhatsApp */
+	border-radius: 50%; /* Lo hace circular */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.35); /* Sombra para dar efecto flotante */
+	transition: transform 0.3s ease-in-out;
+	padding: 0.5rem;
+	opacity: 0;
+	z-index: 100;
+}
+
+.floatingWhatsapp:hover {
+	transform: scale(1.1); /* Efecto de agrandar al pasar el mouse */
+}
+
+.floatingWhatsapp a {
+	background-color: transparent;
+}
+
+.floatingWhatsapp a svg {
+	margin: 0;
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+}
+
+.visible {
+	animation: fadeIn 0.5s ease forwards;
+}
+
+.hiden {
+	animation: fadeOut 0.5s ease forwards;
+}

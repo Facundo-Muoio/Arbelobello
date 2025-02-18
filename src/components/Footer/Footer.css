@@ -126,6 +126,64 @@
 	animation-delay: 0.7s;
 }
 
+.modal-info {
+	font-family: "variableFontThing";
+	font-size: var(--font-size-md);
+	overflow-y: auto;
+}
+
+.modal-info p {
+	padding: 1rem;
+}
+
+.wraper-logo-modal_info {
+	background-color: var(--secondary-bg-color);
+	width: 100%;
+	height: auto;
+	font-family: "ciabatta";
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2rem;
+}
+
+.wraper-logo-modal_info h2,
+.wraper-logo-modal_info h3 {
+	color: var(--main-bg-color);
+	background-color: var(--secondary-bg-color);
+}
+
+.wraper-logo-modal_info img {
+	max-width: 320px;
+	background-color: var(--secondary-bg-color);
+}
+
+.wraper-logo-modal_info h2 {
+	font-size: var(--font-size-xxl);
+}
+
+.wraper-logo-modal_info h3 {
+	font-size: var(--font-size-base);
+	font-family: "variableFont";
+	letter-spacing: 2px;
+}
+
+#sierras-info {
+	width: 100%;
+	height: 70px;
+	object-position: top;
+	object-fit: cover;
+	background-color: var(--secondary-bg-color);
+}
+
+.footer-div {
+	background-color: var(--secondary-bg-color);
+	min-height: 50px;
+	width: 100%;
+}
+
 .toast-footer {
 	right: 2rem;
 }
@@ -280,6 +338,10 @@
 	.wraper-button {
 		right: 2rem;
 	}
+
+	.wraper-logo-modal_info img {
+		max-width: 280px;
+	}
 }
 
 @media screen and (max-width: 900px) {
@@ -330,6 +392,10 @@
 		padding: 0.75em 2.5em;
 		letter-spacing: 4px;
 		font-size: var(--font-size-base);
+	}
+
+	.wraper-logo-modal_info img {
+		max-width: 250px;
 	}
 }
 
@@ -387,5 +453,11 @@
 		position: absolute;
 		right: 1em;
 		bottom: 1em;
+	}
+}
+
+@media screen and (max-width: 1919px) {
+	.modal-info {
+		font-size: var(--font-size-base);
 	}
 }

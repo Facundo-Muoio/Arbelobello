@@ -52,6 +52,12 @@
 	animation: fadeInBtm 0.5s linear 1s forwards;
 }
 
+.fade {
+	opacity: 0;
+	transform: translateY(0px);
+	animation: fadeIn 0.6s ease-in forwards;
+}
+
 .thumbnail:nth-child(1) {
 	animation-delay: 0.2s;
 }
@@ -66,22 +72,6 @@
 
 .thumbnail:nth-child(4) {
 	animation-delay: 0.8s;
-}
-
-.fade {
-	animation: fadeMainImg 0.35s linear forwards;
-}
-
-@keyframes fadeMainImg {
-	from {
-		opacity: 0;
-		transform: translateY(0);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
 }
 
 .btn-open-modal {

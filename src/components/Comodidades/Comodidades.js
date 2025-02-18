@@ -14,6 +14,7 @@ import Juegos from "../../images/juegosMesa.png";
 import Amenities from "../../images/amenities.png";
 import Ropa from "../../images/ropaBlanca.png";
 import Desayuno from "../../images/desayuno.png";
+import Pet from "../../images/pet.png";
 import { useState, useRef } from "react";
 import { createObserver } from "../../helpers/helpers";
 import { useAnimation } from "../../hooks/hooks";
@@ -22,7 +23,7 @@ export default function Comodidades() {
 	const comodidadesRef = useRef();
 	const [isVisible, setIsVisible] = useState();
 	const comodidadesObserver = createObserver(setIsVisible, {
-		threshold: 0.9,
+		threshold: 0.3,
 	});
 
 	useAnimation(comodidadesObserver, comodidadesRef);
@@ -138,6 +139,13 @@ export default function Comodidades() {
 						<p>
 							<strong>Insumos para desayuno</strong>: saquitos de café, variedad
 							de té, sobrecitos de leche en polvo y de azúcar
+						</p>
+					</div>
+					<div className="item">
+						<img src={Pet} alt="" />
+						<p>
+							<strong> Somos Pet Friendly</strong>: Podés venir con tu mascota
+							con un costo adicional.
 						</p>
 					</div>
 				</>

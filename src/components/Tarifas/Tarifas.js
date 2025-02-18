@@ -3,7 +3,6 @@ import "./Tarifas.css";
 import { useAnimation } from "../../hooks/hooks";
 import { createObserver, parseTextToJSX } from "../../helpers/helpers";
 import { useFetch } from "../../hooks/hooks";
-import { parse } from "dotenv";
 
 export default function Tarfias() {
 	const tarifa = {
@@ -14,7 +13,7 @@ export default function Tarfias() {
 	const [isVisible, setIsVisible] = useState();
 
 	const tarifasRef = useRef();
-	const tarifasObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const tarifasObserver = createObserver(setIsVisible, { threshold: 0.3 });
 	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
 	const { data: dataText } = useFetch(urlText);
 	let texts;
@@ -30,13 +29,17 @@ export default function Tarfias() {
 			{isVisible && dataText ? (
 				<>
 					<div className="wraper-tarifa">
-						<h2>{parseTextToJSX(texts[0][2])}</h2>
+						<h2 style={{ whiteSpace: "pre-line" }}>
+							{parseTextToJSX(texts[0][2])}
+						</h2>
 						<p>
 							<strong>{parseTextToJSX(texts[1][2])}</strong>
 						</p>
 					</div>
 					<div className="wraper-tarifa">
-						<h2>{parseTextToJSX(texts[2][2])}</h2>
+						<h2 style={{ whiteSpace: "pre-line" }}>
+							{parseTextToJSX(texts[2][2])}
+						</h2>
 						<p>
 							<strong>{parseTextToJSX(texts[3][2])}</strong>
 						</p>

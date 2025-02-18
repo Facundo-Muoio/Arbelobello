@@ -7,7 +7,7 @@ import { useFetch } from "../../hooks/hooks";
 export default function Ubicacion() {
 	const [isVisible, setIsVisible] = useState();
 	const ubicacionRef = useRef();
-	const ubicacionObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const ubicacionObserver = createObserver(setIsVisible, { threshold: 0.3 });
 	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
 	const { data: dataText } = useFetch(urlText);
 	let texts;

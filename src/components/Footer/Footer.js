@@ -4,22 +4,48 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import { GrMailOption } from "react-icons/gr";
 import * as React from "react";
-import { createObserver } from "../../helpers/helpers";
-import { useAnimation } from "../../hooks/hooks";
-import { useState, useRef } from "react";
+import { createObserver, parseTextToJSX } from "../../helpers/helpers";
+import { useAnimation, useFetch } from "../../hooks/hooks";
+import { useState, useRef, useContext } from "react";
 import EmailForm from "../EmailForm/EmailForm";
 import ToastProvider from "../Toast/ToastProvider";
+import { FloatingWpContext } from "../../Contexts/Context.js";
+import Modal from "../Modal/Modal.js";
+import Logo from "../../images/logo.png";
+import Sierra from "../../images/pathSierras.png";
 
 export default function Footer() {
 	const [isVisible, setIsVisible] = useState();
 	const [isOpen, setIsOpen] = useState(false);
+	const [modalInfoVisibility, setModalInfoVisibility] = useState(false);
 	const footerRef = useRef();
-	const footerObserver = createObserver(setIsVisible, { threshold: 0.9 });
+	const { setFloatingWhatsappVisibility } = useContext(FloatingWpContext);
+	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
+	const { data: dataText } = useFetch(url);
+	let textModalInfo;
+
+	const footerObserver = createObserver(
+		setIsVisible,
+		{ threshold: 0.9 },
+		setFloatingWhatsappVisibility,
+		{ setOnFalse: true }
+	);
+
 	const handlerOpen = () => {
 		setIsOpen(true);
 	};
 
+	const handlerOpenModalInfo = () => {
+		setModalInfoVisibility(true);
+	};
+
 	useAnimation(footerObserver, footerRef);
+
+	if (dataText) {
+		textModalInfo = dataText.values.filter(
+			text => text[0] === "términos y condiciones"
+		);
+	}
 
 	return (
 		<ToastProvider className="toast-footer">
@@ -54,8 +80,30 @@ export default function Footer() {
 							<p>CASA SERRANA</p>
 						</div>
 						<div className="wraper-button">
-							<button>MÁS INFO</button>
+							<button onClick={handlerOpenModalInfo}>MÁS INFO</button>
 						</div>
+						<Modal
+							isOpen={modalInfoVisibility}
+							setIsOpen={setModalInfoVisibility}
+							className={"modal-info"}
+						>
+							<div className="wraper-logo-modal_info">
+								<img
+									src={Logo}
+									alt="logo"
+									loading="lazy"
+									decoding="async"
+									className="logo-modal_info"
+								/>
+								<h2>Arbelobello</h2>
+								<h3>CASA SERRANA</h3>
+							</div>
+							<img src={Sierra} alt="sierra" id="sierras-info" />
+							<p style={{ whiteSpace: "pre-line" }}>
+								{dataText && parseTextToJSX(textModalInfo[0][2])}
+							</p>
+							<div className="footer-div"></div>
+						</Modal>
 					</>
 				)}
 			</footer>

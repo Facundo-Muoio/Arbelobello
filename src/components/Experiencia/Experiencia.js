@@ -7,7 +7,7 @@ export default function Experiencia() {
 	const contentRef = useRef(null);
 	const [contentIsVisible, setcontentIsVisible] = useState(false);
 	const contentObserver = createObserver(setcontentIsVisible, {
-		threshold: 0.8,
+		threshold: 0.3,
 	});
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/EXPERIENCIA?key=${process.env.API_KEY}`;
 	const urlText = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/TEXTOS?key=${process.env.API_KEY}`;
