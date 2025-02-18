@@ -1,0 +1,10 @@
+.videoPlayQueue-container {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: var(--third-bg-color);
+	animation: changeColor 0.75s linear 2.7s forwards;
+}

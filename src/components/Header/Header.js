@@ -10,6 +10,7 @@ import "./Header.css";
 import { createObserver } from "../../helpers/helpers.js";
 import { FloatingWpContext } from "../../Contexts/Context.js";
 import SplitingVideo from "../SplitingVideo/SplitingVideo.js";
+import VideoPlayQueue from "../VideoPlayQueue/VideoPlayQueue.js";
 
 export default function Header() {
 	const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.SPREADSHEET_ID}/values/HEADER?key=${process.env.API_KEY}`;
@@ -49,6 +50,7 @@ export default function Header() {
 					<FadeImage images={data.values.slice(3)} /> */}
 					<SplitingVideo sourceVideo={videos[0][2]} side="left" />
 					<SplitingVideo sourceVideo={videos[1][2]} side="right" />
+					{videos && <VideoPlayQueue videos={videos} />}
 				</div>
 				<header ref={headerRef}>
 					<div id="container-logo_sierraAlta">
