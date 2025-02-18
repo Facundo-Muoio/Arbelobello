@@ -44,7 +44,6 @@ export default function Header() {
 
 	if (data) {
 		videos = data.values.slice(2);
-		console.log(videos);
 	}
 
 	if (data)
