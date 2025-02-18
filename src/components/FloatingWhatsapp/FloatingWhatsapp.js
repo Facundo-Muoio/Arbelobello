@@ -5,7 +5,6 @@ import { FloatingWpContext } from "../../Contexts/Context";
 
 export default function FloatingWhatsapp() {
 	const { FloatingWpVisibility } = useContext(FloatingWpContext);
-	console.log(FloatingWpVisibility);
 
 	return (
 		<div

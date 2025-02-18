@@ -23,10 +23,8 @@ const createObserver = (
 					setFunction(true);
 					if (setSecondaryFunction) {
 						if (setOnFalse) {
-							console.log("entre");
 							setSecondaryFunction(false);
 						} else {
-							console.log("no entre");
 							setSecondaryFunction(true);
 						}
 					}

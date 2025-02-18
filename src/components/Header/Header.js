@@ -2,7 +2,6 @@ import LogoSierraAlta from "../../images/sierra_alta.png";
 import LogoSierraBaja from "../../images/sierra_baja.png";
 import PathSierra from "../../images/pathSierras.png";
 import Navbar from "../Navbar/Navbar.js";
-import FadeImage from "../FadeImage/FadeImage.js";
 import ToastProvider from "../Toast/ToastProvider.js";
 import { useRef, useState, useContext } from "react";
 import { useAnimation, useFetch } from "../../hooks/hooks.js";
@@ -26,10 +25,6 @@ export default function Header() {
 	let videos;
 
 	useAnimation(headerObserver, headerRef);
-
-	if (isVisible) {
-		console.log("el header es visible");
-	}
 
 	const { data, error, isLoading } = useFetch(url);
 

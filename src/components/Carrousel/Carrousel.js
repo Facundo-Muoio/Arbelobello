@@ -71,7 +71,6 @@ export default function Carrousel() {
 
 	const handlerPrevBtn = ref => {
 		const sliderWidth = ref.current.parentElement.parentElement.offsetWidth;
-		console.log(sliderWidth);
 		const controlContainer = ref.current.parentElement;
 		if (currentIndex >= 1) {
 			setCurrentIndex(prev => prev - 1);
