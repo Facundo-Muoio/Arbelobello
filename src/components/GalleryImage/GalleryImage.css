@@ -357,6 +357,14 @@
 		object-fit: cover;
 	}
 
+	.box-bg-gallery .thumbnail:hover {
+		filter: grayscale(100%);
+	}
+
+	.thumbnail.active {
+		filter: grayscale(0%) !important;
+	}
+
 	.box-bg-gallery .btn-open-modal {
 		font-size: 12px;
 		width: fit-content;

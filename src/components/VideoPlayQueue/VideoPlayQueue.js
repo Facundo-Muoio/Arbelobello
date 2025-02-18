@@ -15,7 +15,6 @@ export default function VideoPlayQueue({ videos }) {
 	}, [isMobile]);
 
 	useEffect(() => {
-		console.log(index, videos[index][2]);
 		const handleVideoEnd = () => {
 			setIndex(prevIndex => (prevIndex + 1) % videos.length);
 		};
