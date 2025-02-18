@@ -23,7 +23,7 @@ export default function Header() {
 		setFloatingWhatsappVisibility,
 		{ setOnFalse: true }
 	);
-	let video;
+	let videos;
 
 	useAnimation(headerObserver, headerRef);
 
