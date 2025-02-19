@@ -3,7 +3,7 @@ import LogoSierraBaja from "../../images/sierra_baja.png";
 import PathSierra from "../../images/pathSierras.png";
 import Navbar from "../Navbar/Navbar.js";
 import ToastProvider from "../Toast/ToastProvider.js";
-import { useRef, useState, useContext } from "react";
+import { useRef, useState, useContext, useEffect } from "react";
 import { useAnimation, useFetch } from "../../hooks/hooks.js";
 import "dotenv/config";
 import "./Header.css";
@@ -17,6 +17,7 @@ export default function Header() {
 	const [isVisible, setIsVisible] = useState();
 	const headerRef = useRef();
 	const { setFloatingWhatsappVisibility } = useContext(FloatingWpContext);
+	const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 	const headerObserver = createObserver(
 		setIsVisible,
 		{ threshold: 0.9 },
@@ -46,11 +47,14 @@ export default function Header() {
 		return (
 			<>
 				<div className="background">
-					{/* <FadeImage images={data.values.slice(2, 3)} />
-					<FadeImage images={data.values.slice(3)} /> */}
-					<SplitingVideo sourceVideo={videos[0][2]} side="left" />
-					<SplitingVideo sourceVideo={videos[1][2]} side="right" />
-					{videos && <VideoPlayQueue videos={videos.slice(2)} />}
+					<SplitingVideo
+						sourceVideo={isMobile ? videos[2][2] : videos[0][2]}
+						side="left"
+					/>
+					<SplitingVideo
+						sourceVideo={isMobile ? videos[3][2] : videos[1][2]}
+						side="right"
+					/>
 				</div>
 				<header ref={headerRef}>
 					<div id="container-logo_sierraAlta">
