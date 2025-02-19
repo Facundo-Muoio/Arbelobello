@@ -28,7 +28,7 @@ export default function VideoPlayQueue({ videos }) {
 				videoRef.current.removeEventListener("ended", handleVideoEnd);
 			}
 		};
-	}, [index, videos]);
+	}, [index]);
 
 	useEffect(() => {
 		if (videoRef.current) {

@@ -50,7 +50,7 @@ export default function Header() {
 					<FadeImage images={data.values.slice(3)} /> */}
 					<SplitingVideo sourceVideo={videos[0][2]} side="left" />
 					<SplitingVideo sourceVideo={videos[1][2]} side="right" />
-					{videos && <VideoPlayQueue videos={videos} />}
+					{videos && <VideoPlayQueue videos={videos.slice(2)} />}
 				</div>
 				<header ref={headerRef}>
 					<div id="container-logo_sierraAlta">
