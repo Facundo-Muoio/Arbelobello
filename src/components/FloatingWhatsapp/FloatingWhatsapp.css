@@ -37,7 +37,7 @@
 @media screen and (max-width: 900px) {
 	.floatingWhatsapp svg {
 		font-size: 2rem;
-		bottom: 1.25rem; /* Distancia desde la parte inferior */
-		right: 1.25rem;
+		bottom: 16px; /* Distancia desde la parte inferior */
+		right: 16px;
 	}
 }
