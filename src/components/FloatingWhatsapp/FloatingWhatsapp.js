@@ -7,18 +7,15 @@ export default function FloatingWhatsapp() {
 	const { FloatingWpVisibility } = useContext(FloatingWpContext);
 
 	return (
-		<div
+		<a
 			className={`floatingWhatsapp ${
 				FloatingWpVisibility ? "visible" : "hiden"
 			}`}
+			href={`https://wa.me/${process.env.CEL_NUMBER}`}
+			target="_blank"
+			rel="noopener noreferrer"
 		>
-			<a
-				href={`https://wa.me/${process.env.CEL_NUMBER}`}
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<FaWhatsapp className="icon" />
-			</a>
-		</div>
+			<FaWhatsapp />
+		</a>
 	);
 }

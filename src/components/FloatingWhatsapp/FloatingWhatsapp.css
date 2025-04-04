@@ -2,8 +2,6 @@
 	position: fixed; /* Lo mantiene fijo en el viewport */
 	bottom: 2rem; /* Distancia desde la parte inferior */
 	right: 2rem; /* Distancia desde la parte derecha */
-	width: fit-content; /* Tamaño del icono */
-	height: auto;
 	border: 1px solid #25d366;
 	background-color: #25d366; /* Color de WhatsApp */
 	border-radius: 50%; /* Lo hace circular */
@@ -21,15 +19,11 @@
 	transform: scale(1.1); /* Efecto de agrandar al pasar el mouse */
 }
 
-.floatingWhatsapp a {
-	background-color: transparent;
-}
-
-.floatingWhatsapp a svg {
+.floatingWhatsapp svg {
 	margin: 0;
-	background-color: transparent;
-	width: 50px;
-	height: 50px;
+	color: #fff;
+	background-color: #25d366;
+	font-size: 3rem;
 }
 
 .visible {
@@ -41,8 +35,7 @@
 }
 
 @media screen and (max-width: 900px) {
-	.floatingWhatsapp a svg {
-		width: 35px;
-		height: 35px;
+	.floatingWhatsapp svg {
+		font-size: 2rem;
 	}
 }
