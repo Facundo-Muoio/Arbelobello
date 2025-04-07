@@ -71,11 +71,11 @@ export default function Experiencia() {
 								<p>{parseTextToJSX(texts[1][2])}</p>
 							</div>
 						)}
-						<div className="button-box">
+						{/* <div className="button-box">
 							<button className="btn-experience">
 								<strong>VER MÁS</strong>
 							</button>
-						</div>
+						</div> */}
 					</div>
 				</>
 			)}

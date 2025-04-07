@@ -17,6 +17,7 @@ export default function Modal({ isOpen, setIsOpen, children, className }) {
 				dialogRef.current &&
 				!dialogRef.current.firstChild.contains(event.target)
 			) {
+				console.log(dialogRef.current.firstChild);
 				setIsOpen(false);
 			}
 		};

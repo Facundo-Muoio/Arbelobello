@@ -129,6 +129,9 @@
 .modal-info {
 	font-family: "variableFontThing";
 	font-size: var(--font-size-md);
+}
+
+.modal-info .modal-content {
 	overflow-y: auto;
 }
 
