@@ -132,35 +132,20 @@ ul li {
 }
 
 ::-webkit-scrollbar {
-	width: 0.5rem; /* Para scroll vertical */
-	height: 0.5rem; /* Para scroll horizontal */
+	width: 0.5rem;
+	height: 0.5rem;
 }
 
-/* Estilo del fondo del scrollbar */
 ::-webkit-scrollbar-track {
-	background: transparent; /* Color de fondo */
-	border-radius: 6px; /* Bordes redondeados */
+	background: transparent;
+	border-radius: 6px;
 }
 
-/* Estilo del "thumb" (la barra desplazable) */
 ::-webkit-scrollbar-thumb {
-	background: var(--opinions-bg-color); /* Color */
-	border-radius: 6px; /* Bordes redondeados */
-	/* border: 2px solid var(--opinions-bg-color) Espacio entre el thumb y el track */
+	background: var(--opinions-bg-color);
+	border-radius: 6px;
 }
 
-/* Cambia el color del thumb al hacer hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--opinions-bg-color); /* Color al pasar el mouse */
+	background: var(--opinions-bg-color);
 }
-/* 
-@media screen and (max-width: 767px) {
-	body {
-		scroll-snap-type: y mandatory;
-		scroll-behavior: smooth;
-	}
-
-	body .section {
-		scroll-snap-align: start;
-	}
-} */

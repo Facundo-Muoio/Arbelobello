@@ -4,9 +4,9 @@ import { useEffect } from "react";
 
 const useFetch = url => {
 	const { data, error, isLoading } = useSWR(url, fetcher, {
-		revalidateIfStale: false,
-		revalidateOnFocus: false,
-		revalidateOnReconnect: false,
+		revalidateIfStale: true,
+		revalidateOnFocus: true,
+		revalidateOnReconnect: true,
 	});
 
 	return {
