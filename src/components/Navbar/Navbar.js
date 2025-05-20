@@ -177,7 +177,7 @@ export default function Navbar() {
 			<Modal isOpen={isOpen} setIsOpen={setIsOpen} className="modal-form">
 				<FormProvider
 					handlerSubmit={handlerSubmit}
-					labelBtnSend="RESERVAR"
+					labelBtnSend="SOLICITAR RESERVA"
 					spinner={isLoading}
 				>
 					<div className="wraper-logo-form">
